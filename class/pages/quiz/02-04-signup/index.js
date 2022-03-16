@@ -65,47 +65,54 @@ export default function(){
 
     const [time,setTime] = useState("3:00")
 
-    let isValid = true
+    // let isValid = true
     function onClickSignup(){
         if(email.includes("@") === false){
             setEmailError("이메일이 올바르지 않습니다. @가 없잔슴")
-            isValid = false
+            // isValid = false
         } else{
             setEmailError("")
         }
         if(name === ""){
             setNameError("이름을 입력하세요.")
-            isValid = false
+            // isValid = false
         } else{
             setNameError("")
         }
         if(password === ""){
             setPasswordError("비밀번호를 입력하세요.")
-            isValid = false
+            // isValid = false
         }else{
             setPasswordError("")
         }
         if(passwordCheck === ""){
             setPasswordCheckError("비밀번호를 한번 더 입력하세요.")
-            isValid = false
+            // isValid = false
         }else{
             setPasswordCheckError("")
         }
         if(password !== passwordCheck){
             setPasswordCheckError("비밀번호가 일치하지 않습니다.")
-            isValid = false
+            // isValid = false
         }else{
             setPasswordCheckError("")
         }
         // if(genderRadioWoman === false && genderRadioMan === false){
         //     setGenderError("성별을 선택해 주세요.")
         // }
-        if(isValid === true){
-            alert("가입이 완료되었습니다.")
+        // if(isValid === true){
+        //      alert("가입이 완료되었습니다.")
+
+        if( email.includes("@") === true && 
+            name !== "" &&
+            password !== "" &&
+            passwordCheck !== "" &&
+            password === passwordCheck){
+                alert("가입이 완료되었습니다.")
+            }
+        
         }
         
-    
-    }
 
     return(
     
