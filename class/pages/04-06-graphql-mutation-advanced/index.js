@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {useState} from 'react'
-import { useMutation, gql } from '@apollo/client'
+import { useMutation, gql} from '@apollo/client'
 
 const CREATE_PRODUCT = gql`
     mutation createProduct($seller: String, $createProductInput: CreateProductInput!){
