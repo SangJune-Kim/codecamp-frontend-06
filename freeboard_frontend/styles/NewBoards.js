@@ -25,11 +25,24 @@ export const HeaderBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+`
+
+export const ProfileBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
+
+export const PasswordBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 export const Head = styled.div`
   display: flex;
   flex-direction: column;
-  height: auto;
+  /* height: auto; */
   padding-bottom: 30px;
 `;
 export const HeadText = styled.div`
@@ -41,13 +54,14 @@ export const Box = styled.input`
   width: 486px;
   height: 52px;
   border: 1px solid #bdbdbd;
-  color: #bdbdbd;
+
 `;
 
 export const HeadBox = styled.input`
   width: 100%;
   height: 52px;
   border: 1px solid #bdbdbd;
+  margin-bottom: 20px;
 `;
 
 export const ContentsBox = styled.textarea`
@@ -128,4 +142,11 @@ export const RegisterButton = styled.button`
   height: 52px;
   background-color: #ffd600;
   border: 0px;
+  cursor: pointer;
 `;
+
+export const ErrorBox = styled.div`
+  color: red;
+  width: auto;
+  height: 20px;
+`
