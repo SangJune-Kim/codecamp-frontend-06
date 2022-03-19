@@ -54,10 +54,10 @@ const QuizGraphqlPage = () => {
     }
   return (
     <div>
-        판매자:<input type="text" onChange={onChangeSeller}/><br />
-        이름:<input type="text" onChange={onChangeName}/><br />
-        내용:<input type="text" onChange={onChangeDetail}/><br />
-        가격:<input type="number" onChange={onChangePrice}/><br />
+        판매자:<input type="text" onChange={onChangeSeller}/>
+        이름:<input type="text" onChange={onChangeName}/>
+        내용:<input type="text" onChange={onChangeDetail}/>
+        가격:<input type="number" onChange={onChangePrice}/>
       <div>{data}</div>
       <button onClick={onClickRequest}>GRAPHQL-API요청하기</button>
     </div>

@@ -13,12 +13,10 @@ const QuizRestPage =() =>{
         const result = await axios.get("https://koreanjson.com/users");
 
         console.log(result.data) 
-        setRestData(result.data[0].name) 
+        setRestData(result.data[0]) 
         setRestData2(result.data[1].name) 
 
- 
 
-        
         // const resultMap = result.data.map((res)=>{
         //     return res.username
         // })
