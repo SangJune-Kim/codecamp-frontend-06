@@ -1,5 +1,4 @@
 import { gql, useQuery } from "@apollo/client"
-import { getRouteRegex } from "next/dist/shared/lib/router/utils"
 import {useRouter} from 'next/router'
 
 const FETCH_PRODUCT =gql`
@@ -32,13 +31,12 @@ const DynamicRoutedPage = () =>{
         <div>가격:{data && data.fetchProduct.price}</div> 
         */}
 
-        <div>_id:{data?.fetchProduct._id}</div>
-        <div>판매자:{data?.fetchProduct.seller}</div>
-        <div>이름:{data?.fetchProduct.name}</div>
-        <div>내용:{data?.fetchProduct.detail}</div>
-        <div>가격:{data?.fetchProduct.price}</div>
+        <div>_id:{data? data.fetchProduct._id: "loading..."}</div>
+        <div>판매자:{data? data.fetchProduct.seller: "loading..."}</div>
+        <div>이름:{data? data.fetchProduct.name: "loading..."}</div>
+        <div>내용:{data? data.fetchProduct.detail: "loading..."}</div>
+        <div>가격:{data? data.fetchProduct.price: "loading..."}</div>
 
-        {/* 못갖고 왔을때 loading으로 해놔~  <- 일어나면 이거부터*/}
       </div>
     );
 

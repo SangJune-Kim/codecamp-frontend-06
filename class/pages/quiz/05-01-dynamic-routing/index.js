@@ -38,7 +38,7 @@ const DynamicRoutingPage = () => {
   };
 
   const handleCreateProduct = async () => {
-    try {
+    try {``
       const result = await createProduct({
         variables: {
           seller: seller,
