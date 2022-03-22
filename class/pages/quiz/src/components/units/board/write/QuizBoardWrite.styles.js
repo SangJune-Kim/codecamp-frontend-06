@@ -10,5 +10,5 @@ export const ContentsInput = styled.input`
 
 `
 export const RequestButton = styled.button`
-    background-color: ${(props) =>props.isActive ? "white" : "none"};
+    background-color: ${(props) =>props.isActive ? "yellow" : "none"};
 `

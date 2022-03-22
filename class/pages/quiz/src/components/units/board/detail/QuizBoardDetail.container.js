@@ -14,10 +14,11 @@ export default function QuizBoardDetail(){
 
 
   return(
-      <QuizBoardDetailUI />
+      <QuizBoardDetailUI
+      data = {data}
+      />
+      
   )
-
-
 
 }
 

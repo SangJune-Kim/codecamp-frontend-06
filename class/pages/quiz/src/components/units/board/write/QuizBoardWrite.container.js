@@ -26,7 +26,7 @@ export default function QuizBoardWrite() {
           console.log(result.data.createBoard.message)
             alert("게시글 등록에 성공했어요")
             alert("상세 페이지로 이동하겠습니다.")
-          router.push(`../../../../../06-02-container-routed/${result.data.createBoard.number}`)
+          router.push(`../../../../../quiz/06-02-container-routed/${result.data.createBoard.number}`)
         }catch(error){
           alert(error.message)
         }
