@@ -1,44 +1,14 @@
-import { gql, useQuery } from "@apollo/client"
-import {useRouter} from 'next/router'
-import { Wrapper } from '../../../styles/emotion-boardsBoardId'
+//게시물 상세 페이지
 
 
-const FETCH_PRODUCT =gql`
-    query fetchProduct($productId:ID){
-        fetchProduct(productId:$productId){
-            _id
-            seller
-            name
-            detail
-            price
-        }
-    }
-`
+import BoardDetail from "../../../src/components/units/board/detail/BoardDetail.container";
 
-const DynamicRoutedPage = () =>{
-    const router = useRouter()
-    const {data} = useQuery(FETCH_PRODUCT,{
-        variables: {productId: router.query.productId}
-    })
-    
-    console.log(data)
-
+const BoardDetailPage = () =>{
+   
     return (
-      <Wrapper>
-        <div>
-          <div>
-
-          </div>
-        </div>
-        <div>
-
-        </div>
-        <div>
-
-        </div>
-      </Wrapper>
+      <BoardDetail />
     );
 
 }
 
-export default DynamicRoutedPage
+export default BoardDetailPage
