@@ -25,7 +25,7 @@ export const HeaderBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`
+`;
 export const ProfileBox = styled.div`
   width: 100%;
   display: flex;
@@ -45,18 +45,21 @@ export const HeadText = styled.div`
   padding-top: 10px;
 `;
 
-export const Box = styled.input`
+export const Writer = styled.input`
   width: 486px;
   height: 52px;
   border: 1px solid #bdbdbd;
-
+`;
+export const Password = styled.input`
+  width: 486px;
+  height: 52px;
+  border: 1px solid #bdbdbd;
 `;
 
 export const TitleInput = styled.input`
   width: 100%;
   height: 52px;
   border: 1px solid #bdbdbd;
-
 `;
 
 export const HeadBox = styled.input`
@@ -151,4 +154,4 @@ export const ErrorBox = styled.div`
   color: red;
   width: auto;
   height: 20px;
-`
+`;
