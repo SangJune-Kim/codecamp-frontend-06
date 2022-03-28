@@ -121,6 +121,7 @@ export const ButtonWrapper = styled.div`
   width: 100%;
   border-bottom: 1px solid gray;
   padding-bottom: 50px;
+  margin-bottom: 30px;
 `;
 
 export const ListButton = styled.button`

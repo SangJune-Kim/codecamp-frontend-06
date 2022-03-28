@@ -1,4 +1,4 @@
-//목록 프레젠터 페이지
+// 목록 프레젠터 페이지
 import * as S from "./BoardList.styles";
 import { getDate } from "../../../../commons/libraries/utils";
 
@@ -17,7 +17,9 @@ const BoardListUI = (props) => {
             <S.ListNumber>
               {String(el._id).slice(-4).toUpperCase()}
             </S.ListNumber>
-            <S.ListTitle>{el.title}</S.ListTitle>
+            <S.ListTitle id={el._id} onClick={props.onClickMoveDetail}>
+              {el.title}
+            </S.ListTitle>
             <S.ListWriter>{el.writer}</S.ListWriter>
             <S.ListCreatedAt>{getDate(el.createdAt)}</S.ListCreatedAt>
           </S.ListRow>
@@ -28,8 +30,7 @@ const BoardListUI = (props) => {
           <S.BeforeNextIcon src="/boards/list/beforeIcon.png" />1 2
           <S.BeforeNextIcon src="/boards/list/nextIcon.png" />
         </S.PageNumber>
-
-        <S.CreateNewBoardButton>
+        <S.CreateNewBoardButton onClick={props.onClickMoveNewBoard}>
           <S.PencilIcon src="/boards/list/pencil.png" />
           게시물 등록하기
         </S.CreateNewBoardButton>

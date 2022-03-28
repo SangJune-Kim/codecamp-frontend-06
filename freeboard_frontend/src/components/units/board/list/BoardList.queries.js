@@ -1,4 +1,4 @@
-//목록 쿼리 페이지
+// 목록 쿼리 페이지
 import { gql } from "@apollo/client";
 
 export const FETCH_BOARDS = gql`

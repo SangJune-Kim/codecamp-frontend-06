@@ -1,12 +1,11 @@
-//컨테이너 컴포넌트
+// 컨테이너 컴포넌트
 
 import BoardWriteUI from "./BoardWrite.presenter";
-import { ChangeEvent,useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useMutation } from "@apollo/client";
-import { CREATE_BOARD, UPDATE_BOARD} from "./BoardWrite.queries";
+import { CREATE_BOARD, UPDATE_BOARD } from "./BoardWrite.queries";
 import { useRouter } from "next/router";
 import { IBoardWriteProps, ImyVariables } from "./BoardWrite.types";
-
 
 export default function BoardWrite(props: IBoardWriteProps) {
   const [isActive, setIsActive] = useState(false);
@@ -20,16 +19,14 @@ export default function BoardWrite(props: IBoardWriteProps) {
   const [myContents, setMyContents] = useState("");
 
   const onClickUpdate = async () => {
-    
-    const myVariables: ImyVariables
-    = { number: Number(router.query.mynumber) }
+    const myVariables: ImyVariables = { number: Number(router.query.mynumber) };
 
-    if(myWriter !== "") myVariables.writer = myWriter
-    if(myTitle != "") myVariables.title = myTitle
-    if(myContents != "") myVariables.contents = myContents
+    if (myWriter !== "") myVariables.writer = myWriter;
+    if (myTitle != "") myVariables.title = myTitle;
+    if (myContents != "") myVariables.contents = myContents;
 
     await updateBoard({
-      variables: myVariables
+      variables: myVariables,
     });
     alert("게시글 수정에 성공하였습니다!");
     router.push(`/09-01-boards/${router.query.mynumber}`);
@@ -76,14 +73,14 @@ export default function BoardWrite(props: IBoardWriteProps) {
 
   return (
     <BoardWriteUI
-        onChangeWriter={onChangeWriter}
-        onChangeTitle={onChangeTitle}
-        onChangeContents={onChangeContents}
-        callGraphqlApi={callGraphqlApi}
-        onClickUpdate={onClickUpdate}
-        isActive={isActive}
-        isEdit={props.isEdit}
-        data={props.data}
+      onChangeWriter={onChangeWriter}
+      onChangeTitle={onChangeTitle}
+      onChangeContents={onChangeContents}
+      callGraphqlApi={callGraphqlApi}
+      onClickUpdate={onClickUpdate}
+      isActive={isActive}
+      isEdit={props.isEdit}
+      data={props.data}
     />
   );
 }

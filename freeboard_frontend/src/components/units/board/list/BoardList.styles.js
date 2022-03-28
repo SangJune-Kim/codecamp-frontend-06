@@ -1,4 +1,4 @@
-//목록 스타일즈 페이지
+// 목록 스타일즈 페이지
 
 import styled from "@emotion/styled";
 
@@ -42,6 +42,7 @@ export const ListTitle = styled.div`
   width: 40%;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 `;
 
 export const ListWriter = styled.div`
@@ -80,8 +81,8 @@ export const CreateNewBoardButton = styled.button`
   background-color: #ffffff;
   width: 175px;
   height: 45px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `;

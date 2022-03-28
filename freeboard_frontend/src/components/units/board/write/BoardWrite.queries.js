@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-//등록 페이지 용
+// 등록 페이지 용
 export const CREATE_BOARD = gql`
   mutation createBoard($createBoardInput: CreateBoardInput!) {
     createBoard(createBoardInput: $createBoardInput) {
@@ -12,7 +12,7 @@ export const CREATE_BOARD = gql`
   }
 `;
 
-//수정 페이지 용
+// 수정 페이지 용
 export const UPDATE_BOARD = gql`
   mutation updateBoard(
     $updateBoardInput: UpdateBoardInput!

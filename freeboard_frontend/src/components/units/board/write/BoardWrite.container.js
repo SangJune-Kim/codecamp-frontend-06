@@ -101,6 +101,14 @@ const BoardWrite = (props) => {
 
   // 수정하기 버튼 부분
   const handleEdit = async () => {
+    if (!writer && !contents) {
+      alert("수정한 내용이 없습니다.");
+      return;
+    }
+    if (!password) {
+      alert("비밀번호를 입력해주세요.");
+      return;
+    }
     const updateBoardInput = {};
     if (title) updateBoardInput.title = title;
     if (contents) updateBoardInput.contents = contents;

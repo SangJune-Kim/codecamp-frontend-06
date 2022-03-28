@@ -6,23 +6,28 @@ import { FETCH_BOARD } from "./BoardDetail.queries";
 
 const BoardDetail = () => {
   const router = useRouter();
+
   const { data } = useQuery(FETCH_BOARD, {
     variables: { boardId: router.query.boardId },
   });
+  console.log(data);
 
   const onClickMoveEditPage = () => {
     router.push(`/boards/${router.query.boardId}/edit`);
   };
+
   const onClickMoveListPage = () => {
     router.push(`/boards`);
   };
 
   return (
-    <BoardDetailUI
-      data={data}
-      onClickMoveEditPage={onClickMoveEditPage}
-      onClickMoveListPage={onClickMoveListPage}
-    />
+    <>
+      <BoardDetailUI
+        data={data}
+        onClickMoveEditPage={onClickMoveEditPage}
+        onClickMoveListPage={onClickMoveListPage}
+      />
+    </>
   );
 };
 export default BoardDetail;

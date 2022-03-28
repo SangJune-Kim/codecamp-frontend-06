@@ -4,7 +4,6 @@ import * as S from "./BoardWrite.Styles";
 
 const BoardWriteUI = (props) => {
   return (
-    //html 쓰는곳 //
     <S.Wrapper>
       <S.Header>{props.isEdit ? "수정페이지" : "등록페이지"}</S.Header>
       <S.HeaderBox>
