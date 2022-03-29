@@ -1,6 +1,7 @@
 // 목록 스타일즈 페이지
 
 import styled from "@emotion/styled";
+import { Rate } from "antd";
 
 export const Wrapper = styled.div`
   width: 1200px;
@@ -36,6 +37,7 @@ export const CommentFetchHeader = styled.div`
 export const CommentWriter = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 `;
 
 export const Star = styled.img`
@@ -43,7 +45,11 @@ export const Star = styled.img`
   height: 20px;
 `;
 
-export const CommentStars = styled.div``;
+export const CommentStars = styled.div`
+  margin-left: 10px;
+`;
+
+export const RatingStar = styled(Rate)``;
 
 export const CommentContents = styled.div`
   margin-bottom: 30px;

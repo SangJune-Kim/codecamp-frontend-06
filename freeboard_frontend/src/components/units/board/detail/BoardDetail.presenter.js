@@ -31,13 +31,17 @@ const BoardDetailUI = (props) => {
         </S.YoutubeBox>
         <S.LikeWrapper>
           <S.LikeBox>
-            <S.LikeIcon src="/like.png" />
-            <S.LikeNumber>{props.data?.fetchBoard.likeCount}</S.LikeNumber>
+            <S.LikeButton onClick={props.onClickLike}>
+              <S.LikeIcon />
+            </S.LikeButton>
+            <S.LikeNumber>{props.data?.fetchBoard?.likeCount}</S.LikeNumber>
           </S.LikeBox>
           <S.disLikeBox>
-            <S.disLikeIcon src="/dislike.png" />
+            <S.disLikeButton onClick={props.onClickDisLike}>
+              <S.disLikeIcon />
+            </S.disLikeButton>
             <S.disLikeNumber>
-              {props.data?.fetchBoard.dislikeCount}
+              {props.data?.fetchBoard?.dislikeCount}
             </S.disLikeNumber>
           </S.disLikeBox>
         </S.LikeWrapper>

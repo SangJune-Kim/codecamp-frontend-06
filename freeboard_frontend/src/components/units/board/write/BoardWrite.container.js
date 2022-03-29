@@ -13,6 +13,9 @@ const BoardWrite = (props) => {
   const [titleError, setTitleError] = useState("");
   const [contents, setContents] = useState("");
   const [contentsError, setContentsError] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const [address, setAddress] = useState("");
+  const [zipcode, setZipcode] = useState("");
 
   const router = useRouter();
 
@@ -55,6 +58,12 @@ const BoardWrite = (props) => {
     }
   };
 
+  const onClickPostCode = (address) => {
+    setIsOpen((prev) => !prev);
+    setAddress(address.address);
+    setZipcode(address.zonecode);
+  };
+
   const handleRegister = async () => {
     if (writer === "") {
       setWriterError("작성자를 입력하세요.");
@@ -76,10 +85,24 @@ const BoardWrite = (props) => {
     } else {
       setContentsError("");
     }
-    if (writer === "" || password === "" || title === "" || contents === "") {
+    if (
+      writer === "" ||
+      password === "" ||
+      title === "" ||
+      contents === "" ||
+      address === "" ||
+      zipcode === ""
+    ) {
       alert("작성할 곳이 남아있습니다.");
     }
-    if (writer !== "" && password !== "" && title !== "" && contents !== "") {
+    if (
+      writer !== "" &&
+      password !== "" &&
+      title !== "" &&
+      contents !== "" &&
+      address !== "" &&
+      zipcode !== ""
+    ) {
       try {
         const result = await createBoard({
           variables: {
@@ -144,6 +167,10 @@ const BoardWrite = (props) => {
       contentsError={contentsError}
       isEdit={props.isEdit}
       data={props.data}
+      onClickPostCode={onClickPostCode}
+      isOpen={isOpen}
+      address={address}
+      zipcode={zipcode}
     />
   );
 };

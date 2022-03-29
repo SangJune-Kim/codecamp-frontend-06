@@ -1,5 +1,5 @@
-// 프레젠터 컴포넌트
-
+import DaumPostcode from "react-daum-postcode";
+import { Modal } from "antd";
 import * as S from "./BoardWrite.Styles";
 
 const BoardWriteUI = (props) => {
@@ -53,11 +53,27 @@ const BoardWriteUI = (props) => {
 
       <S.HeadText>주소</S.HeadText>
       <S.Address>
-        <S.AddressNumber type="text" placeholder="07250" />
-        <S.AddressSearch>우편번호 검색</S.AddressSearch>
+        <S.AddressNumber
+          type="text"
+          defaultValue={props?.zipcode}
+          readOnly={true}
+        />
+        <S.AddressSearch onClick={props.onClickPostCode}>
+          우편번호 검색
+        </S.AddressSearch>
+        {props.isOpen && (
+          <Modal
+            visible={true}
+            title={"우편번호 검색"}
+            onOk={props.onClickPostCode}
+            onCancel={props.onClickPostCode}
+          >
+            <DaumPostcode onComplete={props.onClickPostCode} />
+          </Modal>
+        )}
       </S.Address>
-      <S.HeadBox type="text" />
-      <S.HeadBox type="text" />
+      <S.HeadBox type="text" defaultValue={props?.address} readOnly={true} />
+      <S.HeadBox type="text" placeholder="상세 주소를 입력하세요." />
 
       <S.Head>
         <S.HeadText>유튜브</S.HeadText>

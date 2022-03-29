@@ -16,7 +16,7 @@ const BoardCommentWrite = (props) => {
   const [commentWriter, setCommentWriter] = useState("");
   const [commentPassword, setCommentPassword] = useState("");
   const [commentContents, setCommentContents] = useState("");
-  const [commentRating, setCommentRating] = useState(1);
+  const [commentRating, setCommentRating] = useState(0);
 
   const onChangeCommentWriter = (event) => {
     setCommentWriter(event.target.value);
@@ -28,18 +28,24 @@ const BoardCommentWrite = (props) => {
     setCommentContents(event.target.value);
   };
 
+  const onChangeRate = (value) => {
+    setCommentRating(value);
+  };
+
   const onClickBoardCommentRegister = async () => {
     if (
       commentWriter === "" ||
       commentPassword === "" ||
-      commentContents === ""
+      commentContents === "" ||
+      commentRating === ""
     ) {
       alert("작성할 부분이 남았습니다.");
     }
     if (
       commentWriter !== "" &&
       commentPassword !== "" &&
-      commentContents !== ""
+      commentContents !== "" &&
+      commentRating !== ""
     ) {
       try {
         await createBoardComment({
@@ -60,6 +66,9 @@ const BoardCommentWrite = (props) => {
           ],
         });
         alert("댓글이 등록되었습니다.");
+        setCommentWriter("");
+        setCommentPassword("");
+        setCommentContents("");
       } catch (error) {
         alert(error.message);
       }
@@ -111,6 +120,7 @@ const BoardCommentWrite = (props) => {
       commentPassword={commentPassword}
       commentWriter={commentWriter}
       isEdit={props.isEdit}
+      onChangeRate={onChangeRate}
     />
   );
 };

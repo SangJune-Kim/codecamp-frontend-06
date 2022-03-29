@@ -50,15 +50,20 @@ const BoardCommentListItemUI = (props) => {
           <S.CommentProfileImg src="/Profile.png" />
           <S.CommentContentsBox>
             <S.CommentFetchHeader>
-              <S.CommentWriter>{props.el?.writer}</S.CommentWriter>
-              <S.CommentStars>
+              <S.CommentWriter>
+                {props.el?.writer}
+                <S.CommentStars>
+                  <S.RatingStar disabled value={props.el?.rating} />
+                </S.CommentStars>
+              </S.CommentWriter>
+              <div>
                 <S.UpdateIconButton onClick={onClickUpdateBoardComment}>
                   <S.UpdateIcon src="/boards/detail/update.png" />
                 </S.UpdateIconButton>
                 <S.DeleteIconButton onClick={onClickDeleteBoardComment}>
                   <S.DeleteIcon src="/boards/detail/delete.png" />
                 </S.DeleteIconButton>
-              </S.CommentStars>
+              </div>
             </S.CommentFetchHeader>
             <S.CommentContents>{props.el?.contents}</S.CommentContents>
             <S.CommentCreatedAt>

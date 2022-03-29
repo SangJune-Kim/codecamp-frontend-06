@@ -83,10 +83,11 @@ export const Address = styled.div`
   width: 220px;
 `;
 export const AddressNumber = styled.input`
-  width: 77px;
+  width: 100px;
   height: 52px;
   border: 1px solid #bdbdbd;
   padding-left: 5px;
+  margin-right: 20px;
 `;
 
 export const AddressSearch = styled.button`
@@ -96,6 +97,7 @@ export const AddressSearch = styled.button`
   border: 0px;
   color: white;
   font-size: small;
+  cursor: pointer;
 `;
 
 export const BottomBox = styled.div`
