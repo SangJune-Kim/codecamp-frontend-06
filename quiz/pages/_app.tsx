@@ -1,4 +1,5 @@
 import "antd/dist/antd.css";
+// import "~slick-carousel/slick/slick.css";
 // import "../styles/globals.css";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { AppProps } from "next/app";
