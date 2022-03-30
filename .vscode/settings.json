@@ -3,11 +3,14 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 
   "cSpell.ignoreWords": [
+    "Daum",
     "antd",
     "commentwriter",
     "crossorigin",
     "mynumber",
     "newdate",
-    "skyblue"
+    "skyblue",
+    "zipcode",
+    "zonecode"
   ]
 }
