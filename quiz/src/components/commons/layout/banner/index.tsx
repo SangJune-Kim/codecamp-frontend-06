@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SimpleSlider from "../../slider";
+import Component from "../../slider";
 
 const Wrapper = styled.div`
   height: 200px;
@@ -14,7 +14,7 @@ export default function LayoutBanner() {
   return (
     <Wrapper>
       <div>배너 영역</div>
-      <SimpleSlider />
+      <Component />
     </Wrapper>
   );
 }

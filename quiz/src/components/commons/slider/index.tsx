@@ -1,4 +1,3 @@
-import { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,30 +18,28 @@ const ByeImg = styled.img`
   height: 100px;
 `;
 
-export default class SimpleSlider extends Component {
-  render() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    };
-    return (
-      <div>
-        <Slider {...settings}>
-          <div>
-            <Test>
-              <HelloImg src="/img/Hello_yellow.png" />
-            </Test>
-          </div>
-          <div>
-            <Test>
-              <ByeImg src="/img/goodBye.png" />
-            </Test>
-          </div>
-        </Slider>
-      </div>
-    );
-  }
+export default function Component() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  return (
+    <div>
+      <Slider {...settings}>
+        <div>
+          <Test>
+            <HelloImg src="/img/Hello_yellow.png" />
+          </Test>
+        </div>
+        <div>
+          <Test>
+            <ByeImg src="/img/goodBye.png" />
+          </Test>
+        </div>
+      </Slider>
+    </div>
+  );
 }

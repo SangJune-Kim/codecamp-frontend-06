@@ -9,7 +9,7 @@ import { globalStyles } from "../src/commons/styles/globalStyles";
 function MyApp({ Component, pageProps }: AppProps) {
   // 모든 세팅
   const client = new ApolloClient({
-    uri: "http://example.codebootcamp.co.kr/graphql",
+    uri: "http://backend06.codebootcamp.co.kr/graphql",
     cache: new InMemoryCache(),
   });
 

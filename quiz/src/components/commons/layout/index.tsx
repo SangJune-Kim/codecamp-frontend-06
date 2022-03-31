@@ -9,10 +9,12 @@ import LayoutSidebar from "./sidebar";
 
 const BodyWrapper = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 const Body = styled.div`
-  height: 300px;
+  width: 100%;
+  height: 600px;
 `;
 
 interface ILayoutProps {
