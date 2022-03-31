@@ -8,6 +8,7 @@ export const CREATE_BOARD = gql`
       writer
       title
       contents
+      youtubeUrl
     }
   }
 `;
@@ -27,6 +28,7 @@ export const UPDATE_BOARD = gql`
       _id
       title
       contents
+      youtubeUrl
     }
   }
 `;

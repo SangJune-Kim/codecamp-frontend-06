@@ -1,4 +1,4 @@
-//게시물 수정페이지
+// 게시물 수정페이지
 
 import { useQuery, gql } from "@apollo/client";
 import { useRouter } from "next/router";
@@ -14,6 +14,7 @@ const FETCH_BOARD = gql`
       createdAt
       likeCount
       dislikeCount
+      youtubeUrl
     }
   }
 `;

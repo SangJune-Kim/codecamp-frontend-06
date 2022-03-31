@@ -7,6 +7,7 @@ import { FETCH_BOARD_COMMENTS } from "../list/BoardCommentList.queries";
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
+import { Modal } from "antd";
 
 const BoardCommentWrite = (props) => {
   const router = useRouter();
@@ -39,7 +40,7 @@ const BoardCommentWrite = (props) => {
       commentContents === "" ||
       commentRating === ""
     ) {
-      alert("작성할 부분이 남았습니다.");
+      Modal.error({ content: "작성할 부분이 남았습니다." });
     }
     if (
       commentWriter !== "" &&
@@ -65,23 +66,24 @@ const BoardCommentWrite = (props) => {
             },
           ],
         });
-        alert("댓글이 등록되었습니다.");
+        Modal.success({ content: "댓글이 등록되었습니다." });
         setCommentWriter("");
         setCommentPassword("");
         setCommentContents("");
+        setCommentRating(0);
       } catch (error) {
-        alert(error.message);
+        Modal.error({ content: error.message });
       }
     }
   };
 
   const onClickBoardCommentUpdate = async () => {
     if (!commentContents) {
-      alert("내용이 수정되지 않았습니다.");
+      Modal.error({ content: "내용이 수정되지 않았습니다." });
       return;
     }
     if (!commentPassword) {
-      alert("비밀번호가 입력되지 않았습니다.");
+      Modal.error({ content: "비밀번호가 입력되지 않았습니다." });
       return;
     }
     try {
@@ -102,10 +104,11 @@ const BoardCommentWrite = (props) => {
           },
         ],
       });
-      alert("댓글이 수정되었습니다.");
+      Modal.success({ content: "댓글이 수정되었습니다." });
+
       props.setIsEdit?.(false);
     } catch (error) {
-      alert(error.message);
+      Modal.error({ content: error.message });
     }
   };
 

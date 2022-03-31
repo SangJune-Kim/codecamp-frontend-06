@@ -3,7 +3,7 @@ import BoardDetailUI from "./BoardDetail.presenter";
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { FETCH_BOARD, LIKE_BOARD, DISLIKE_BOARD } from "./BoardDetail.queries";
-import { FETCH_BOARD_COMMENTS } from "../../boardComment/list/BoardCommentList.queries";
+import { Modal } from "antd";
 
 const BoardDetail = () => {
   const router = useRouter();
@@ -35,7 +35,7 @@ const BoardDetail = () => {
         ],
       });
     } catch (error) {
-      alert(error.message);
+      Modal.error({ content: error.message });
     }
   };
 
@@ -51,7 +51,7 @@ const BoardDetail = () => {
         ],
       });
     } catch (error) {
-      alert(error.message);
+      Modal.error({ content: error.message });
     }
   };
 

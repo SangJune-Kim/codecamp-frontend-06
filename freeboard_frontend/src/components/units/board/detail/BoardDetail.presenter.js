@@ -27,7 +27,13 @@ const BoardDetailUI = (props) => {
           <S.ContentsInput>{props.data?.fetchBoard.contents}</S.ContentsInput>
         </S.ContentsWrapper>
         <S.YoutubeBox>
-          <S.YoutubeInput src="https://www.youtube.com/embed/3P1CnWI62Ik" />
+          {props.data?.fetchBoard.youtubeUrl && (
+            <S.Youtube
+              url={props.data?.fetchBoard.youtubeUrl}
+              width={560}
+              height={315}
+            />
+          )}
         </S.YoutubeBox>
         <S.LikeWrapper>
           <S.LikeBox>

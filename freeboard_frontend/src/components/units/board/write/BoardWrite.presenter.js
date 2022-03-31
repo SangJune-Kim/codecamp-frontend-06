@@ -77,7 +77,12 @@ const BoardWriteUI = (props) => {
 
       <S.Head>
         <S.HeadText>유튜브</S.HeadText>
-        <S.HeadBox type="text" placeholder="링크를복사해주세요." />
+        <S.HeadBox
+          onChange={props?.onChangeYoutubeUrl}
+          type="text"
+          placeholder="링크를 붙혀넣어주세요."
+          defaultValue={props?.data?.fetchBoard.youtubeUrl || ""}
+        />
       </S.Head>
       <S.BottomBox>
         <S.HeadText>사진첨부</S.HeadText>

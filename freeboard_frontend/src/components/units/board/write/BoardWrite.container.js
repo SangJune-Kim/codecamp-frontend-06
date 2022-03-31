@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { useMutation } from "@apollo/client";
 import { CREATE_BOARD, UPDATE_BOARD } from "./BoardWrite.queries";
+import { Modal } from "antd";
 
 const BoardWrite = (props) => {
   const [writer, setWriter] = useState("");
@@ -16,11 +17,16 @@ const BoardWrite = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [address, setAddress] = useState("");
   const [zipcode, setZipcode] = useState("");
+  const [youtubeUrl, setYoutubeUrl] = useState("");
 
   const router = useRouter();
 
   const [createBoard] = useMutation(CREATE_BOARD);
   const [updateBoard] = useMutation(UPDATE_BOARD);
+
+  const onChangeYoutubeUrl = (event) => {
+    setYoutubeUrl(event.target.value);
+  };
 
   const onChangeWriter = (event) => {
     setWriter(event.target.value);
@@ -93,7 +99,7 @@ const BoardWrite = (props) => {
       address === "" ||
       zipcode === ""
     ) {
-      alert("작성할 곳이 남아있습니다.");
+      Modal.error({ content: "작성할 곳이 남아있습니다." });
     }
     if (
       writer !== "" &&
@@ -111,30 +117,33 @@ const BoardWrite = (props) => {
               password: password,
               title: title,
               contents: contents,
+              youtubeUrl: youtubeUrl,
             },
           },
         });
-        alert("가입이 완료되었습니다.");
+        Modal.success({ content: "가입이 완료되었습니다." });
         router.push(`/boards/${result.data.createBoard._id}`);
       } catch (error) {
-        alert(error.message);
+        Modal.error({ content: error.message });
       }
     }
   };
 
   // 수정하기 버튼 부분
   const handleEdit = async () => {
-    if (!writer && !contents) {
-      alert("수정한 내용이 없습니다.");
+    if (!writer && !contents && !youtubeUrl) {
+      Modal.error({ content: "수정한 내용이 없습니다." });
       return;
     }
     if (!password) {
-      alert("비밀번호를 입력해주세요.");
+      Modal.error({ content: "비밀번호를 입력해주세요." });
       return;
     }
     const updateBoardInput = {};
     if (title) updateBoardInput.title = title;
     if (contents) updateBoardInput.contents = contents;
+    if (youtubeUrl) updateBoardInput.youtubeUrl = youtubeUrl;
+
     // 한 줄 짜리 if는 중괄호 생략 가능
     // if(title) === if(title !== "") 같은 의미 왜냐하면 문자열에 어떤거라도 있으면 true 라서
 
@@ -146,10 +155,10 @@ const BoardWrite = (props) => {
           updateBoardInput: updateBoardInput,
         },
       });
-      alert("게시물이 수정되었습니다.");
+      Modal.success({ content: "게시물이 수정되었습니다." });
       router.push(`/boards/${router.query.boardId}`);
     } catch (error) {
-      alert(error.message);
+      Modal.error({ content: error.message });
     }
   };
 
@@ -171,6 +180,8 @@ const BoardWrite = (props) => {
       isOpen={isOpen}
       address={address}
       zipcode={zipcode}
+      youtubeUrl={youtubeUrl}
+      onChangeYoutubeUrl={onChangeYoutubeUrl}
     />
   );
 };

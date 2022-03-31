@@ -8,10 +8,13 @@ import {
 import { useRouter } from "next/router";
 import { useState } from "react";
 import BoardCommentWrite from "../write/BoardCommentWrite.container";
+import { Modal } from "antd";
 
 const BoardCommentListItemUI = (props) => {
   const router = useRouter();
   const [isEdit, setIsEdit] = useState(false);
+  const [isDelete, setIsDelete] = useState(false);
+  const [ModalPassword, setModalPassword] = useState("");
 
   const { data } = useQuery(FETCH_BOARD_COMMENTS, {
     variables: { boardId: String(router.query.boardId) },
@@ -19,12 +22,19 @@ const BoardCommentListItemUI = (props) => {
 
   const [deleteBoardComment] = useMutation(DELETE_BOARD_COMMENT);
 
+  const onToggleDeleteModal = () => {
+    setIsDelete((prev) => !prev);
+  };
+
+  const onChangeModalPassword = (event) => {
+    setModalPassword(event.target.value);
+  };
+
   const onClickDeleteBoardComment = async () => {
-    const PromptPassword = prompt("비밀번호를 입력하세요", "");
     try {
       await deleteBoardComment({
         variables: {
-          password: PromptPassword,
+          password: ModalPassword,
           boardCommentId: String(props.el._id),
         },
         refetchQueries: [
@@ -34,8 +44,9 @@ const BoardCommentListItemUI = (props) => {
           },
         ],
       });
+      Modal.success({ content: "댓글 삭제가 완료되었습니다." });
     } catch (error) {
-      alert(error.message);
+      Modal.error({ content: error.message });
     }
   };
 
@@ -60,9 +71,19 @@ const BoardCommentListItemUI = (props) => {
                 <S.UpdateIconButton onClick={onClickUpdateBoardComment}>
                   <S.UpdateIcon src="/boards/detail/update.png" />
                 </S.UpdateIconButton>
-                <S.DeleteIconButton onClick={onClickDeleteBoardComment}>
+                <S.DeleteIconButton onClick={onToggleDeleteModal}>
                   <S.DeleteIcon src="/boards/detail/delete.png" />
                 </S.DeleteIconButton>
+                {isDelete && (
+                  <Modal
+                    title={"비밀번호를 입력하세요"}
+                    visible={true}
+                    onOk={onClickDeleteBoardComment}
+                    onCancel={onToggleDeleteModal}
+                  >
+                    <input type="password" onChange={onChangeModalPassword} />
+                  </Modal>
+                )}
               </div>
             </S.CommentFetchHeader>
             <S.CommentContents>{props.el?.contents}</S.CommentContents>

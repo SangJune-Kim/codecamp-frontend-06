@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { LikeOutlined, DislikeOutlined } from "@ant-design/icons";
+import ReactPlayer from "react-player";
 
 export const Wrapper = styled.div`
   width: 1200px;
@@ -73,10 +74,7 @@ export const YoutubeBox = styled.div`
   margin-bottom: 50px;
 `;
 
-export const YoutubeInput = styled.iframe`
-  width: 560px;
-  height: 315px;
-`;
+export const Youtube = styled(ReactPlayer)``;
 
 export const LikeWrapper = styled.div`
   width: 100%;
