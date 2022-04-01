@@ -1,6 +1,7 @@
 // 목록 프레젠터 페이지
 import * as S from "./BoardList.styles";
 import { getDate } from "../../../../commons/libraries/utils";
+import Pagination from "../../../commons/paginations/boards/Pagination";
 
 const BoardListUI = (props) => {
   return (
@@ -27,8 +28,7 @@ const BoardListUI = (props) => {
       </S.ListWrapper>
       <S.BottomWrapper>
         <S.PageNumber>
-          <S.BeforeNextIcon src="/boards/list/beforeIcon.png" />1 2
-          <S.BeforeNextIcon src="/boards/list/nextIcon.png" />
+          <Pagination refetch={props.refetch} lastPage={props.lastPage} />
         </S.PageNumber>
         <S.CreateNewBoardButton onClick={props.onClickMoveNewBoard}>
           <S.PencilIcon src="/boards/list/pencil.png" />

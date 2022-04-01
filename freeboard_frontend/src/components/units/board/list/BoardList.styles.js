@@ -3,8 +3,8 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: auto;
-  height: auto;
+  width: 80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 30px 100px;
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ListWrapper = styled.div`
-  width: 1200px;
+  width: 100%;
   height: auto;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -28,6 +28,7 @@ export const ListTop = styled.div`
 export const ListRow = styled.div`
   display: flex;
   width: 100%;
+  height: 100%;
   border-top: 1px solid gray;
   padding: 10px 0;
 `;
@@ -59,18 +60,12 @@ export const ListCreatedAt = styled.div`
 
 export const BottomWrapper = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
 `;
 
-export const PageNumber = styled.div`
-  margin-right: 373px;
-`;
-
-export const BeforeNextIcon = styled.img`
-  margin-left: 30px;
-  margin-right: 30px;
-`;
+export const PageNumber = styled.div``;
 
 export const PencilIcon = styled.img`
   margin-right: 10px;
@@ -79,8 +74,8 @@ export const PencilIcon = styled.img`
 export const CreateNewBoardButton = styled.button`
   border: 1px solid #bdbdbd;
   background-color: #ffffff;
-  width: 175px;
-  height: 45px;
+  width: 180px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;

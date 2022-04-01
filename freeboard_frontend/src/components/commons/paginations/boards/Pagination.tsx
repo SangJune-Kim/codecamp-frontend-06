@@ -54,7 +54,6 @@ export default function Pagination(props) {
   return (
     <S.WrapperPageNation>
       <S.PagePrevButton onClick={onClickPrevPage} isPrevActive={isPrevActive}>
-        {" "}
         <CaretLeftOutlined />
       </S.PagePrevButton>
       {new Array(10).fill(1).map((_, index) =>
@@ -65,7 +64,7 @@ export default function Pagination(props) {
             id={String(index + startPage)}
             currentPage={currentPage === index + startPage}
           >
-            {` `} {index + startPage}
+            {index + startPage}
           </S.PageNumber>
         ) : (
           <S.PageNumber></S.PageNumber>

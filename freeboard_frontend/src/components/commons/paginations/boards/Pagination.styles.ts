@@ -1,26 +1,39 @@
 import styled from "@emotion/styled";
 
 export const WrapperPageNation = styled.div`
-  width: 1000px;
+  width: 800px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding-top: 20px;
+  align-items: center;
 `;
 
 export const PagePrevButton = styled.span`
-  margin: 0 20px;
+  width: 10%;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
-  display: ${(props) => (props.isPrevActive ? "y" : "none")};
+  border: 0px;
+  background-color: white;
+  font-size: 25px;
+  color: ${(props) => (props.isPrevActive ? "black" : "white")};
 `;
 
 export const PageNextButton = styled.span`
-  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  width: 10%;
   cursor: pointer;
+  border: 0px;
+  background-color: white;
   display: ${(props) => (props.isNextActive ? "y" : "none")};
 `;
 
 export const PageNumber = styled.span`
-  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  width: 8%;
+  font-size: 25px;
   cursor: pointer;
   color: ${(props) => (props.currentPage ? "orange" : "black")};
   font-weight: ${(props) => (props.currentPage ? "bold" : "normal")};
