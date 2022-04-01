@@ -23,7 +23,7 @@ const BoardCommentWriteUI = (props) => {
             onChange={props.onChangeCommentPassword}
             value={props.commentPassword}
           />
-          <Rate onChange={props.onChangeRate} />
+          <Rate onChange={props.onChangeRate} value={props.commentRating} />
         </S.CommentInfo>
         <S.CommentContentsWrapper>
           <S.CommentContentsInput

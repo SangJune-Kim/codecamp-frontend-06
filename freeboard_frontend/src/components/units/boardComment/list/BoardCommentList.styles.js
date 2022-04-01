@@ -5,13 +5,16 @@ import { Rate } from "antd";
 
 export const Wrapper = styled.div`
   width: 1200px;
+  height: 700px;
   margin: 50px auto;
+  overflow: auto;
 `;
 
 export const CommentFetchWrapper = styled.div`
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid gray;
+  margin-top: 10px;
 `;
 
 export const CommentProfileImg = styled.img`

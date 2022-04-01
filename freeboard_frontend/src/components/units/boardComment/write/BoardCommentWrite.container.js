@@ -122,6 +122,7 @@ const BoardCommentWrite = (props) => {
       commentContents={commentContents}
       commentPassword={commentPassword}
       commentWriter={commentWriter}
+      commentRating={commentRating}
       isEdit={props.isEdit}
       onChangeRate={onChangeRate}
     />

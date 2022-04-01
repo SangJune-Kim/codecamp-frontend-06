@@ -7,11 +7,11 @@ import { useRouter } from "next/router";
 const BoardCommentList = () => {
   const router = useRouter();
 
-  const { data } = useQuery(FETCH_BOARD_COMMENTS, {
+  const { data, fetchMore } = useQuery(FETCH_BOARD_COMMENTS, {
     variables: { boardId: String(router.query.boardId) },
   });
   console.log(data);
 
-  return <BoardCommentListUI data={data} />;
+  return <BoardCommentListUI data={data} fetchMore={fetchMore} />;
 };
 export default BoardCommentList;

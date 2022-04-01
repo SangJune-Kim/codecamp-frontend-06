@@ -93,6 +93,7 @@ const BoardCommentListItemUI = (props) => {
           </S.CommentContentsBox>
         </S.CommentFetchWrapper>
       )}
+
       {isEdit && (
         <BoardCommentWrite isEdit={true} setIsEdit={setIsEdit} el={props.el} />
       )}
