@@ -2,13 +2,14 @@ import { useQuery, gql } from "@apollo/client";
 import styled from "@emotion/styled";
 import InfiniteScroll from "react-infinite-scroller";
 
-const FETCH_BOARDS = gql`
-  query fetchBoards($page: Int) {
-    fetchBoards(page: $page) {
+export const FETCH_BOARD_COMMENTS = gql`
+  query fetchBoardComments($boardId: ID!, $page: Int) {
+    fetchBoardComments(boardId: $boardId, page: $page) {
       _id
       writer
-      title
       contents
+      createdAt
+      rating
     }
   }
 `;
@@ -27,7 +28,7 @@ const MyColumn = styled.div`
 `;
 
 const MapBoardPage = () => {
-  const { data, fetchMore } = useQuery(FETCH_BOARDS);
+  const { data, fetchMore } = useQuery(FETCH_BOARD_COMMENTS);
 
   const onLoadMore = () => {
     if (!data) return;

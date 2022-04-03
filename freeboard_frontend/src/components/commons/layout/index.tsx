@@ -2,13 +2,18 @@ import LayoutHeader from "./header";
 import LayoutBanner from "./banner";
 import LayoutNavigation from "./navigation";
 import styled from "@emotion/styled";
+import { ReactNode } from "react";
 
 const Body = styled.div`
   width: 100%;
   height: 100%;
 `;
 
-const Layout = (props) => {
+interface ILayoutProps {
+  children: ReactNode;
+}
+
+const Layout = (props: ILayoutProps) => {
   return (
     <div>
       <LayoutHeader></LayoutHeader>
