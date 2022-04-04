@@ -125,6 +125,7 @@ const BoardCommentWrite = (props) => {
       commentRating={commentRating}
       isEdit={props.isEdit}
       onChangeRate={onChangeRate}
+      el={props.el}
     />
   );
 };

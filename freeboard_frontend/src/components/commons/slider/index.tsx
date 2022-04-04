@@ -31,12 +31,12 @@ export default function Component() {
       <Slider {...settings}>
         <div>
           <Test>
-            <HelloImg src="/img/Hello_yellow.png" />
+            <HelloImg src="/images/Hello_yellow.png" />
           </Test>
         </div>
         <div>
           <Test>
-            <ByeImg src="/img/goodBye.png" />
+            <ByeImg src="/images/goodBye.png" />
           </Test>
         </div>
       </Slider>
