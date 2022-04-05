@@ -1,20 +1,20 @@
 import styled from "@emotion/styled";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Component from "../../slider";
+import SliderComponent from "../../slider";
 
 const Wrapper = styled.div`
-  height: 200px;
-  background-color: gray;
+  height: 300px;
+  background-color: #f2f1eb;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 `;
 
 export default function LayoutBanner() {
   return (
     <Wrapper>
-      <div>캐러셀로 백그라운드 이미지 넣고 앞에 글자랑 ㅇㅇ</div>
-      <Component />
+      <SliderComponent />
     </Wrapper>
   );
 }

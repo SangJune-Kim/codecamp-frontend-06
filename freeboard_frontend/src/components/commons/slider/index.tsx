@@ -3,22 +3,23 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "@emotion/styled";
 
-const Test = styled.div`
+const SliderImg = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 const HelloImg = styled.img`
-  width: 250px;
-  height: 100px;
+  width: 300px;
+  height: 150px;
 `;
 
 const ByeImg = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 150px;
 `;
 
-export default function Component() {
+export default function SliderComponent() {
   const settings = {
     dots: true,
     infinite: true,
@@ -30,14 +31,14 @@ export default function Component() {
     <div>
       <Slider {...settings}>
         <div>
-          <Test>
+          <SliderImg>
             <HelloImg src="/images/Hello_yellow.png" />
-          </Test>
+          </SliderImg>
         </div>
         <div>
-          <Test>
+          <SliderImg>
             <ByeImg src="/images/goodBye.png" />
-          </Test>
+          </SliderImg>
         </div>
       </Slider>
     </div>
