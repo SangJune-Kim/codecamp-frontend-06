@@ -9,6 +9,10 @@ export const CREATE_BOARD = gql`
       title
       contents
       youtubeUrl
+      boardAddress {
+        zipcode
+        address
+      }
     }
   }
 `;
@@ -26,9 +30,6 @@ export const UPDATE_BOARD = gql`
       updateBoardInput: $updateBoardInput
     ) {
       _id
-      title
-      contents
-      youtubeUrl
     }
   }
 `;

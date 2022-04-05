@@ -1,27 +1,19 @@
 import { ChangeEvent } from "react";
+import { Address } from "react-daum-postcode";
 
-export interface BoardWriteProps {
-  onChangeYoutubeUrl: (event: ChangeEvent<HTMLInputElement>) => void;
-  onChangeWriter: (event: ChangeEvent<HTMLInputElement>) => void;
-  onChangePassword: (event: ChangeEvent<HTMLInputElement>) => void;
-  onChangeTitle: (event: ChangeEvent<HTMLInputElement>) => void;
-  onChangeContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
-  onClickPostCode: (event: ChangeEvent<HTMLInputElement>) => void;
-  isEdit?: Boolean;
+export interface IBoardWriteProps {
+  isEdit?: boolean;
   data?: any;
-  handleRegister: () => void;
 }
 
-export interface BoardWriteUIProps {
-  isEdit?: Boolean;
-
+export interface IBoardWriteUIProps {
+  isEdit?: boolean;
   data?: any;
   onChangeYoutubeUrl: (event: ChangeEvent<HTMLInputElement>) => void;
   onChangeWriter: (event: ChangeEvent<HTMLInputElement>) => void;
   onChangePassword: (event: ChangeEvent<HTMLInputElement>) => void;
   onChangeTitle: (event: ChangeEvent<HTMLInputElement>) => void;
   onChangeContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
-  onClickPostCode: () => void;
   handleRegister: () => void;
   handleEdit: () => void;
   writerError: string;
@@ -29,7 +21,8 @@ export interface BoardWriteUIProps {
   titleError: string;
   contentsError: string;
   isOpen: boolean;
-  address: any;
-  zipcode: string;
   youtubeUrl: string;
+  onClickPostCode: (address: Address) => void;
+  address: string;
+  zipcode: string;
 }

@@ -11,6 +11,10 @@ export const FETCH_BOARD = gql`
       likeCount
       dislikeCount
       youtubeUrl
+      boardAddress {
+        zipcode
+        address
+      }
     }
   }
 `;
@@ -28,7 +32,7 @@ export const DISLIKE_BOARD = gql`
 `;
 
 export const DELETE_BOARD = gql`
-  mutation deleteBoard($BoardId: ID!) {
-    deleteBoard(boardId: $BoardId)
+  mutation deleteBoard($boardId: ID!) {
+    deleteBoard(boardId: $boardId)
   }
 `;

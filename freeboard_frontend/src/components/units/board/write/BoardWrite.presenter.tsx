@@ -1,9 +1,9 @@
 import DaumPostcode from "react-daum-postcode";
 import { Modal } from "antd";
 import * as S from "./BoardWrite.styles";
-import { BoardWriteUIProps } from "./BoardWrite.types";
+import { IBoardWriteUIProps } from "./BoardWrite.types";
 
-const BoardWriteUI = (props: BoardWriteUIProps) => {
+const BoardWriteUI = (props: IBoardWriteUIProps) => {
   return (
     <S.Wrapper>
       <S.Header>{props.isEdit ? "수정페이지" : "등록페이지"}</S.Header>
@@ -54,8 +54,11 @@ const BoardWriteUI = (props: BoardWriteUIProps) => {
       <S.HeadText>주소</S.HeadText>
       <S.Address>
         <S.AddressNumber
-          type="text"
-          defaultValue={props?.zipcode}
+          value={
+            props.zipcode
+              ? props.zipcode
+              : props.data?.fetchBoard.boardAddress?.zipcode
+          }
           readOnly={true}
         />
         <S.AddressSearch onClick={props.onClickPostCode}>
@@ -72,7 +75,13 @@ const BoardWriteUI = (props: BoardWriteUIProps) => {
           </Modal>
         )}
       </S.Address>
-      <S.HeadBox type="text" defaultValue={props?.address} readOnly={true} />
+      <S.HeadBox
+        value={
+          props.address || props.data?.fetchBoard.boardAddress?.address || ""
+        }
+        readOnly={true}
+      />
+
       <S.HeadBox type="text" placeholder="상세 주소를 입력하세요." />
 
       <S.Head>
@@ -81,7 +90,7 @@ const BoardWriteUI = (props: BoardWriteUIProps) => {
           onChange={props?.onChangeYoutubeUrl}
           type="text"
           placeholder="링크를 붙혀넣어주세요."
-          defaultValue={props?.data?.fetchBoard.youtubeUrl || ""}
+          defaultValue={props.data?.fetchBoard.youtubeUrl || ""}
         />
       </S.Head>
       <S.BottomBox>

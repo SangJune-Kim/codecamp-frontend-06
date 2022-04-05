@@ -19,7 +19,6 @@ const BoardDetail = () => {
   const { data } = useQuery(FETCH_BOARD, {
     variables: { boardId: router.query.boardId },
   });
-  console.log(data);
 
   const onClickMoveEditPage = () => {
     router.push(`/boards/${router.query.boardId}/edit`);

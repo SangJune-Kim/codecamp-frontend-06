@@ -4,10 +4,11 @@ import { useRouter } from "next/router";
 import { useMutation } from "@apollo/client";
 import { CREATE_BOARD, UPDATE_BOARD } from "./BoardWrite.queries";
 import { Modal } from "antd";
-import { BoardWriteProps } from "./BoardWrite.types";
+import { IBoardWriteProps } from "./BoardWrite.types";
 import { IUpdateBoardInput } from "../../../../commons/types/generated/types";
+import { Address } from "react-daum-postcode";
 
-const BoardWrite = (props: BoardWriteProps) => {
+const BoardWrite = (props: IBoardWriteProps) => {
   const [writer, setWriter] = useState("");
   const [writerError, setWriterError] = useState("");
   const [password, setPassword] = useState("");
@@ -66,7 +67,7 @@ const BoardWrite = (props: BoardWriteProps) => {
     }
   };
 
-  const onClickPostCode = (address: any) => {
+  const onClickPostCode = (address: Address) => {
     setIsOpen((prev) => !prev);
     setAddress(address.address);
     setZipcode(address.zonecode);
@@ -93,24 +94,10 @@ const BoardWrite = (props: BoardWriteProps) => {
     } else {
       setContentsError("");
     }
-    if (
-      writer === "" ||
-      password === "" ||
-      title === "" ||
-      contents === "" ||
-      address === "" ||
-      zipcode === ""
-    ) {
+    if (writer === "" || password === "" || title === "" || contents === "") {
       Modal.error({ content: "작성할 곳이 남아있습니다." });
     }
-    if (
-      writer !== "" &&
-      password !== "" &&
-      title !== "" &&
-      contents !== "" &&
-      address !== "" &&
-      zipcode !== ""
-    ) {
+    if (writer !== "" && password !== "" && title !== "" && contents !== "") {
       try {
         const result = await createBoard({
           variables: {
@@ -120,6 +107,10 @@ const BoardWrite = (props: BoardWriteProps) => {
               title: title,
               contents: contents,
               youtubeUrl: youtubeUrl,
+              boardAddress: {
+                zipcode: zipcode,
+                address: address,
+              },
             },
           },
         });
@@ -133,22 +124,22 @@ const BoardWrite = (props: BoardWriteProps) => {
 
   // 수정하기 버튼 부분
   const handleEdit = async () => {
-    if (!writer && !contents && !youtubeUrl) {
-      Modal.error({ content: "수정한 내용이 없습니다." });
-      return;
-    }
     if (!password) {
       Modal.error({ content: "비밀번호를 입력해주세요." });
       return;
     }
+
     const updateBoardInput: IUpdateBoardInput = {};
     if (title) updateBoardInput.title = title;
     if (contents) updateBoardInput.contents = contents;
     if (youtubeUrl) updateBoardInput.youtubeUrl = youtubeUrl;
-
+    if (zipcode || address) {
+      updateBoardInput.boardAddress = {};
+      if (address) updateBoardInput.boardAddress.address = address;
+      if (zipcode) updateBoardInput.boardAddress.zipcode = zipcode;
+    }
     // 한 줄 짜리 if는 중괄호 생략 가능
     // if(title) === if(title !== "") 같은 의미 왜냐하면 문자열에 어떤거라도 있으면 true 라서
-
     try {
       await updateBoard({
         variables: {
