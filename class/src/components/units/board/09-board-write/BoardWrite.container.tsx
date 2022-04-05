@@ -11,7 +11,6 @@ export default function BoardWrite(props: IBoardWriteProps) {
   const [isActive, setIsActive] = useState(false);
   const router = useRouter();
 
-  const [data, setData] = useState("");
   const [createBoard] = useMutation(CREATE_BOARD);
   const [updateBoard] = useMutation(UPDATE_BOARD);
   const [myWriter, setMyWriter] = useState("");
@@ -22,8 +21,8 @@ export default function BoardWrite(props: IBoardWriteProps) {
     const myVariables: ImyVariables = { number: Number(router.query.mynumber) };
 
     if (myWriter !== "") myVariables.writer = myWriter;
-    if (myTitle != "") myVariables.title = myTitle;
-    if (myContents != "") myVariables.contents = myContents;
+    if (myTitle !== "") myVariables.title = myTitle;
+    if (myContents !== "") myVariables.contents = myContents;
 
     await updateBoard({
       variables: myVariables,
@@ -36,7 +35,7 @@ export default function BoardWrite(props: IBoardWriteProps) {
     // const result = await axios.get("https://koreanjson.com/posts/1"); //rest-api 방식
     const result = await createBoard({
       variables: { writer: myWriter, title: myTitle, contents: myContents },
-    }); //graphql-api 방식
+    }); // graphql-api 방식
     // console.log(result);
     // console.log(result.data.createBoard.message)
     // setData(result.data.createBoard.message)

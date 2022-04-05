@@ -3,6 +3,7 @@ import BoardListUI from "./BoardList.presenter";
 import { useQuery } from "@apollo/client";
 import { FETCH_BOARDS, FETCH_BOARDS_COUNT } from "./BoardList.queries";
 import { useRouter } from "next/router";
+import { MouseEvent } from "react";
 
 const BoardList = () => {
   const { data, refetch } = useQuery(FETCH_BOARDS);
@@ -15,8 +16,9 @@ const BoardList = () => {
     router.push("/boards/new");
   };
 
-  const onClickMoveDetail = (event) => {
-    if (event.target) router.push(`/boards/${event.target.id}`);
+  const onClickMoveDetail = (event: MouseEvent<HTMLDivElement>) => {
+    if (event.target instanceof Element)
+      router.push(`/boards/${event.target.id}`);
   };
 
   return (

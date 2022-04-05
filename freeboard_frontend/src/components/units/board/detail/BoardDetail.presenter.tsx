@@ -1,8 +1,9 @@
 // 상세페이지 프레젠터 컴포넌트
 import * as S from "./BoardDetail.styles";
 import { getDate } from "../../../../commons/libraries/utils";
+import { IBoardDetailProps } from "./BoardDetail.types";
 
-const BoardDetailUI = (props) => {
+const BoardDetailUI = (props: IBoardDetailProps) => {
   return (
     <S.Wrapper>
       <S.BoardWrapper>
@@ -59,7 +60,9 @@ const BoardDetailUI = (props) => {
         <S.EditButton onClick={props.onClickMoveEditPage}>
           수정하기
         </S.EditButton>
-        <S.DeleteButton>삭제하기</S.DeleteButton>
+        <S.DeleteButton onClick={props.onClickDeleteBoard}>
+          삭제하기
+        </S.DeleteButton>
       </S.ButtonWrapper>
     </S.Wrapper>
   );

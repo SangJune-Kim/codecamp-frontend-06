@@ -2,8 +2,9 @@
 import * as S from "./BoardList.styles";
 import { getDate } from "../../../../commons/libraries/utils";
 import Pagination from "../../../commons/paginations/boards/Pagination";
+import { IBoardListUIProps } from "./BoardList.types";
 
-const BoardListUI = (props) => {
+const BoardListUI = (props: IBoardListUIProps) => {
   return (
     <S.Wrapper>
       <S.ListWrapper>
@@ -13,7 +14,7 @@ const BoardListUI = (props) => {
           <S.ListWriter>작성자</S.ListWriter>
           <S.ListCreatedAt>작성 날짜</S.ListCreatedAt>
         </S.ListTop>
-        {props.data?.fetchBoards.map((el) => (
+        {props.data?.fetchBoards.map((el: any) => (
           <S.ListRow key={el._id}>
             <S.ListNumber>
               {String(el._id).slice(-4).toUpperCase()}

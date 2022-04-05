@@ -2,8 +2,9 @@
 import * as S from "./BoardCommentList.styles";
 import BoardCommentListItemUI from "./BoardCommentList.presenterItem";
 import InfiniteScroll from "react-infinite-scroller";
+import { BoardCommentListUIProps } from "./BoardCommentList.types";
 
-const BoardCommentListUI = (props) => {
+const BoardCommentListUI = (props: BoardCommentListUIProps) => {
   const onLoadMore = () => {
     if (!props.data) return;
 
@@ -11,7 +12,7 @@ const BoardCommentListUI = (props) => {
       variables: {
         page: Math.ceil(props.data?.fetchBoardComments.length / 10) + 1,
       },
-      updateQuery: (prev, { fetchMoreResult }) => {
+      updateQuery: (prev: any, { fetchMoreResult }) => {
         if (!fetchMoreResult?.fetchBoardComments)
           return { fetchBoardComments: [...prev.fetchBoardComments] };
         return {
@@ -32,7 +33,7 @@ const BoardCommentListUI = (props) => {
         hasMore={true}
         useWindow={false}
       >
-        {props.data?.fetchBoardComments.map((el) => (
+        {props.data?.fetchBoardComments.map((el: any) => (
           <BoardCommentListItemUI key={el._id} el={el} data={props.data} />
         )) || <div></div>}
       </InfiniteScroll>

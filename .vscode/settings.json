@@ -9,8 +9,10 @@
     "crossorigin",
     "mynumber",
     "newdate",
+    "paginations",
     "scroller",
     "skyblue",
+    "typeorm",
     "zipcode",
     "zonecode"
   ]

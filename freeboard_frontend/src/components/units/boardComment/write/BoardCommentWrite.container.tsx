@@ -38,7 +38,7 @@ const BoardCommentWrite = (props) => {
       commentWriter === "" ||
       commentPassword === "" ||
       commentContents === "" ||
-      commentRating === ""
+      !commentRating
     ) {
       Modal.error({ content: "작성할 부분이 남았습니다." });
     }
@@ -46,7 +46,7 @@ const BoardCommentWrite = (props) => {
       commentWriter !== "" &&
       commentPassword !== "" &&
       commentContents !== "" &&
-      commentRating !== ""
+      commentRating
     ) {
       try {
         await createBoardComment({

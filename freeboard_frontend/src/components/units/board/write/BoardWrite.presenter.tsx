@@ -1,8 +1,9 @@
 import DaumPostcode from "react-daum-postcode";
 import { Modal } from "antd";
-import * as S from "./BoardWrite.Styles";
+import * as S from "./BoardWrite.styles";
+import { BoardWriteUIProps } from "./BoardWrite.types";
 
-const BoardWriteUI = (props) => {
+const BoardWriteUI = (props: BoardWriteUIProps) => {
   return (
     <S.Wrapper>
       <S.Header>{props.isEdit ? "수정페이지" : "등록페이지"}</S.Header>
@@ -43,7 +44,6 @@ const BoardWriteUI = (props) => {
       <S.Head>
         <S.HeadText>내용</S.HeadText>
         <S.ContentsBox
-          type="text"
           placeholder="내용을 작성해주세요."
           onChange={props.onChangeContents}
           defaultValue={props.data?.fetchBoard.contents}

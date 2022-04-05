@@ -1,11 +1,13 @@
 import BoardWriteUI from "./BoardWrite.presenter";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useRouter } from "next/router";
 import { useMutation } from "@apollo/client";
 import { CREATE_BOARD, UPDATE_BOARD } from "./BoardWrite.queries";
 import { Modal } from "antd";
+import { BoardWriteProps } from "./BoardWrite.types";
+import { IUpdateBoardInput } from "../../../../commons/types/generated/types";
 
-const BoardWrite = (props) => {
+const BoardWrite = (props: BoardWriteProps) => {
   const [writer, setWriter] = useState("");
   const [writerError, setWriterError] = useState("");
   const [password, setPassword] = useState("");
@@ -24,11 +26,11 @@ const BoardWrite = (props) => {
   const [createBoard] = useMutation(CREATE_BOARD);
   const [updateBoard] = useMutation(UPDATE_BOARD);
 
-  const onChangeYoutubeUrl = (event) => {
+  const onChangeYoutubeUrl = (event: ChangeEvent<HTMLInputElement>) => {
     setYoutubeUrl(event.target.value);
   };
 
-  const onChangeWriter = (event) => {
+  const onChangeWriter = (event: ChangeEvent<HTMLInputElement>) => {
     setWriter(event.target.value);
     if (event.target.value === "") {
       setWriterError("작성자를 작성하세요.");
@@ -37,7 +39,7 @@ const BoardWrite = (props) => {
     }
   };
 
-  const onChangePassword = (event) => {
+  const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
     if (event.target.value === "") {
       setPasswordError("비밀번호를 입력하세요.");
@@ -46,7 +48,7 @@ const BoardWrite = (props) => {
     }
   };
 
-  const onChangeTitle = (event) => {
+  const onChangeTitle = (event: ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
     if (event.target.value === "") {
       setTitleError("제목을 작성하세요.");
@@ -55,7 +57,7 @@ const BoardWrite = (props) => {
     }
   };
 
-  const onChangeContents = (event) => {
+  const onChangeContents = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setContents(event.target.value);
     if (event.target.value === "") {
       setContentsError("내용을 작성하세요.");
@@ -64,7 +66,7 @@ const BoardWrite = (props) => {
     }
   };
 
-  const onClickPostCode = (address) => {
+  const onClickPostCode = (address: any) => {
     setIsOpen((prev) => !prev);
     setAddress(address.address);
     setZipcode(address.zonecode);
@@ -123,7 +125,7 @@ const BoardWrite = (props) => {
         });
         Modal.success({ content: "가입이 완료되었습니다." });
         router.push(`/boards/${result.data.createBoard._id}`);
-      } catch (error) {
+      } catch (error: any) {
         Modal.error({ content: error.message });
       }
     }
@@ -139,7 +141,7 @@ const BoardWrite = (props) => {
       Modal.error({ content: "비밀번호를 입력해주세요." });
       return;
     }
-    const updateBoardInput = {};
+    const updateBoardInput: IUpdateBoardInput = {};
     if (title) updateBoardInput.title = title;
     if (contents) updateBoardInput.contents = contents;
     if (youtubeUrl) updateBoardInput.youtubeUrl = youtubeUrl;
@@ -157,7 +159,7 @@ const BoardWrite = (props) => {
       });
       Modal.success({ content: "게시물이 수정되었습니다." });
       router.push(`/boards/${router.query.boardId}`);
-    } catch (error) {
+    } catch (error: any) {
       Modal.error({ content: error.message });
     }
   };
