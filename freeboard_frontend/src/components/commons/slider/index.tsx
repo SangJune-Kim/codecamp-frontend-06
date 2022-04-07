@@ -3,10 +3,20 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "@emotion/styled";
 
-const SliderImg = styled.div`
+const SliderWrapper = styled.div`
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+`;
+
+const SliderImgBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 `;
 
 const HelloImg = styled.img`
@@ -28,19 +38,19 @@ export default function SliderComponent() {
     slidesToScroll: 1,
   };
   return (
-    <div>
+    <SliderWrapper>
       <Slider {...settings}>
         <div>
-          <SliderImg>
+          <SliderImgBox>
             <HelloImg src="/images/Hello_yellow.png" />
-          </SliderImg>
+          </SliderImgBox>
         </div>
         <div>
-          <SliderImg>
+          <SliderImgBox>
             <ByeImg src="/images/goodBye.png" />
-          </SliderImg>
+          </SliderImgBox>
         </div>
       </Slider>
-    </div>
+    </SliderWrapper>
   );
 }

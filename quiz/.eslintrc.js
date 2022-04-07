@@ -13,6 +13,8 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "@typescript-eslint"],
+  ignorePatterns: ["/src/commons/types/generated/types.ts"],
+
   rules: {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",

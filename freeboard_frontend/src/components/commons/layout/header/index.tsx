@@ -1,9 +1,8 @@
-import { HomeFilled } from "@ant-design/icons";
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 
 const Wrapper = styled.div`
-  height: 120px;
+  height: 100px;
   width: 100%;
   background-color: white;
   display: flex;
@@ -11,10 +10,15 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const HomeIcon = styled(HomeFilled)`
+const HomeButton = styled.button`
   color: #ffd600;
   margin-right: 10px;
   margin-left: 50px;
+  font-size: 60px;
+  font-family: "NanumPen";
+  border: 0px;
+  background-color: white;
+  cursor: pointer;
 `;
 
 const ProfileIcon = styled.img`
@@ -32,7 +36,7 @@ export default function LayoutHeader() {
 
   return (
     <Wrapper>
-      <HomeIcon onClick={onClickMoveHome} />
+      <HomeButton onClick={onClickMoveHome}>Walk</HomeButton>
       <ProfileIcon src="/images/headerProfile.png" />
     </Wrapper>
   );
