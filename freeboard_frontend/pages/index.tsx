@@ -11,11 +11,11 @@ const Wrapper = styled.div`
 export default function Home() {
   return (
     <Wrapper>
-      <div>124124</div>
-      <div>124124</div>
-      <div>124124</div>
-      <div>124124</div>
-      <div>124124</div>
+      <div>랜딩 페이지</div>
+      <div>랜딩 페이지</div>
+      <div>랜딩 페이지</div>
+      <div>랜딩 페이지</div>
+      <div>랜딩 페이지</div>
     </Wrapper>
   );
 }
