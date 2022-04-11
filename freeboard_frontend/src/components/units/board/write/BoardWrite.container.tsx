@@ -67,6 +67,10 @@ const BoardWrite = (props: IBoardWriteProps) => {
     }
   };
 
+  const onClickModal = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   const onClickPostCode = (address: Address) => {
     setIsOpen((prev) => !prev);
     setAddress(address.address);
@@ -170,6 +174,7 @@ const BoardWrite = (props: IBoardWriteProps) => {
       isEdit={props.isEdit}
       data={props.data}
       onClickPostCode={onClickPostCode}
+      onClickModal={onClickModal}
       isOpen={isOpen}
       address={address}
       zipcode={zipcode}

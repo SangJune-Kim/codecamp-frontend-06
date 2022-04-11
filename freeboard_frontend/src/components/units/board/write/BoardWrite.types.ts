@@ -23,6 +23,7 @@ export interface IBoardWriteUIProps {
   isOpen: boolean;
   youtubeUrl: string;
   onClickPostCode: (address: Address) => void;
+  onClickModal: () => void;
   address: string;
   zipcode: string;
 }

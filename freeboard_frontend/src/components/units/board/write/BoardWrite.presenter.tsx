@@ -61,15 +61,15 @@ const BoardWriteUI = (props: IBoardWriteUIProps) => {
           }
           readOnly={true}
         />
-        <S.AddressSearch onClick={props.onClickPostCode}>
+        <S.AddressSearch onClick={props.onClickModal}>
           우편번호 검색
         </S.AddressSearch>
         {props.isOpen && (
           <Modal
             visible={true}
             title={"우편번호 검색"}
-            onOk={props.onClickPostCode}
-            onCancel={props.onClickPostCode}
+            onOk={props.onClickModal}
+            onCancel={props.onClickModal}
           >
             <DaumPostcode onComplete={props.onClickPostCode} />
           </Modal>
