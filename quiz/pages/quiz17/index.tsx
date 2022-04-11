@@ -6,16 +6,18 @@ export default function OpenApiWithUseEffectPage() {
 
   useEffect(() => {
     const DogFetch = async () => {
-      const result = await axios.get("https://dog.ceo/api/breeds/image/random");
-
-      setDogUrl(result.data.message);
+      const result = await axios.get(
+        "https://rawcdn.githack.com/kamikazechaser/administrative-divisions-db/master/api/KR.json"
+      );
+      console.log(result);
+      setDogUrl(result.data);
     };
     DogFetch();
   }, []);
 
   return (
     <div>
-      <img src={dogUrl} />
+      <div>{dogUrl}</div>
     </div>
   );
 }

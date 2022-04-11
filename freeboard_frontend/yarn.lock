@@ -4197,6 +4197,11 @@ onetime@^5.1.0:
   dependencies:
     mimic-fn "^2.1.0"
 
+openwhyd-api-client@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/openwhyd-api-client/-/openwhyd-api-client-1.0.0.tgz#967c1e89a1364a2a6dac60058c5f70c60e152148"
+  integrity sha512-uWIqDNSuleVHtvbH8y3Idg9NcBK8+i0eg42OBJR8ggLhGAYGB+u5padwRtJzjd/nkeuzJDq2bAIbv/TB8lSUFQ==
+
 optimism@^0.16.1:
   version "0.16.1"
   resolved "https://registry.npmjs.org/optimism/-/optimism-0.16.1.tgz"

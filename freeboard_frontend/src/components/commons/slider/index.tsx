@@ -3,20 +3,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "@emotion/styled";
 
-const SliderWrapper = styled.div`
+const Wrapper = styled.div`
   height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 100%;
 `;
 
-const SliderImgBox = styled.div`
+const ImgBox = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+  margin-top: 70px;
 `;
 
 const HelloImg = styled.img`
@@ -25,32 +20,30 @@ const HelloImg = styled.img`
 `;
 
 const ByeImg = styled.img`
-  width: 200px;
+  width: 300px;
   height: 150px;
 `;
 
 export default function SliderComponent() {
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
   return (
-    <SliderWrapper>
+    <Wrapper>
       <Slider {...settings}>
         <div>
-          <SliderImgBox>
+          <ImgBox>
             <HelloImg src="/images/Hello_yellow.png" />
-          </SliderImgBox>
+          </ImgBox>
         </div>
         <div>
-          <SliderImgBox>
-            <ByeImg src="/images/goodBye.png" />
-          </SliderImgBox>
+          <ByeImg src="/images/goodBye.png" />
         </div>
       </Slider>
-    </SliderWrapper>
+    </Wrapper>
   );
 }

@@ -6,9 +6,6 @@ import SliderComponent from "../../slider";
 const Wrapper = styled.div`
   height: 300px;
   background-color: #f2f1eb;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 `;
 
 export default function LayoutBanner() {

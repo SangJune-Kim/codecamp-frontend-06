@@ -43,9 +43,9 @@ export default function LayoutNavigation() {
       <NavigationBar></NavigationBar>
       <NavigationButton onClick={onClickMoveBoards}>게시판</NavigationButton>
       <NavigationBar></NavigationBar>
-      <NavigationButton>중고마켓</NavigationButton>
+      <NavigationButton>???</NavigationButton>
       <NavigationBar></NavigationBar>
-      <NavigationButton>회원가입</NavigationButton>
+      <NavigationButton>중고마켓</NavigationButton>
     </Wrapper>
   );
 }
