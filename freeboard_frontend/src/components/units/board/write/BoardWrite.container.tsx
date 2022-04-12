@@ -142,8 +142,7 @@ const BoardWrite = (props: IBoardWriteProps) => {
       if (address) updateBoardInput.boardAddress.address = address;
       if (zipcode) updateBoardInput.boardAddress.zipcode = zipcode;
     }
-    // 한 줄 짜리 if는 중괄호 생략 가능
-    // if(title) === if(title !== "") 같은 의미 왜냐하면 문자열에 어떤거라도 있으면 true 라서
+
     try {
       await updateBoard({
         variables: {
@@ -154,8 +153,8 @@ const BoardWrite = (props: IBoardWriteProps) => {
       });
       Modal.success({ content: "게시물이 수정되었습니다." });
       router.push(`/boards/${router.query.boardId}`);
-    } catch (error: any) {
-      Modal.error({ content: error.message });
+    } catch (error) {
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
 
