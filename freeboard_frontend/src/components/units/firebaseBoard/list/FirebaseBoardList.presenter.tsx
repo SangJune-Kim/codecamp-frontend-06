@@ -1,10 +1,18 @@
-// 목록 프레젠터 페이지
-import * as S from "./BoardList.styles";
-import { getDate } from "../../../../commons/libraries/utils";
 import Pagination from "../../../commons/paginations/boards/Pagination";
-import { IBoardListUIProps } from "./BoardList.types";
+import * as S from "./FirebaseBoardList.styles";
+import { collection, getFirestore, getDocs } from "firebase/firestore/lite";
+import { firebaseApp } from "../../../../../pages/_app";
 
-const BoardListUI = (props: IBoardListUIProps) => {
+export default function FireBaseBoardListUI(props) {
+  const aaa = async () => {
+    const board = collection(getFirestore(firebaseApp), "board");
+    const result = await getDocs(board);
+
+    const boardList = result.docs.map((el) => el.data());
+    console.log(boardList);
+  };
+  aaa();
+
   return (
     <S.Wrapper>
       <S.BestBoardWrapper>
@@ -17,7 +25,7 @@ const BoardListUI = (props: IBoardListUIProps) => {
           <S.ListWriter>작성자</S.ListWriter>
           <S.ListCreatedAt>작성 날짜</S.ListCreatedAt>
         </S.ListTop>
-        {props.data?.fetchBoards.map((el: any) => (
+        {/* {props.data?.fetchBoards.map((el: any) => (
           <S.ListRow key={el._id}>
             <S.ListNumber>
               {String(el._id).slice(-4).toUpperCase()}
@@ -28,18 +36,17 @@ const BoardListUI = (props: IBoardListUIProps) => {
             <S.ListWriter>{el.writer}</S.ListWriter>
             <S.ListCreatedAt>{getDate(el.createdAt)}</S.ListCreatedAt>
           </S.ListRow>
-        ))}
+        ))} */}
       </S.ListWrapper>
       <S.BottomWrapper>
         <S.PageNumber>
           <Pagination refetch={props.refetch} lastPage={props.lastPage} />
         </S.PageNumber>
-        <S.CreateNewBoardButton onClick={props.onClickMoveNewBoard}>
-          <S.PencilIcon src="/boards/list/pencil.png" />
+        {/* <S.CreateNewBoardButton onClick={props.onClickMoveNewBoard}> */}
+        {/* <S.PencilIcon src="/boards/list/pencil.png" />
           게시물 등록하기
-        </S.CreateNewBoardButton>
+        </S.CreateNewBoardButton> */}
       </S.BottomWrapper>
     </S.Wrapper>
   );
-};
-export default BoardListUI;
+}

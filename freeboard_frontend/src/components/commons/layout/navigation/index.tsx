@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
-
 const Wrapper = styled.div`
-  height: 70px;
+  height: 50px;
   background-color: #ffd600;
   display: flex;
   justify-content: center;
@@ -37,13 +36,19 @@ export default function LayoutNavigation() {
     router.push("/boards");
   };
 
+  const onClickMoveFirebaseBoard = () => {
+    router.push("/firebaseBoard/");
+  };
+
   return (
     <Wrapper>
       <NavigationButton onClick={onClickMoveHome}>HOME </NavigationButton>
       <NavigationBar></NavigationBar>
       <NavigationButton onClick={onClickMoveBoards}>게시판</NavigationButton>
       <NavigationBar></NavigationBar>
-      <NavigationButton>???</NavigationButton>
+      <NavigationButton onClick={onClickMoveFirebaseBoard}>
+        파이어베이스 게시판
+      </NavigationButton>
       <NavigationBar></NavigationBar>
       <NavigationButton>중고마켓</NavigationButton>
     </Wrapper>

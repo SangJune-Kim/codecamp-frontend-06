@@ -4,7 +4,6 @@ export const WrapperPageNation = styled.div`
   width: 800px;
   display: flex;
   justify-content: space-between;
-  padding-top: 20px;
   align-items: center;
 `;
 
@@ -15,7 +14,6 @@ export const PagePrevButton = styled.span`
   cursor: pointer;
   border: 0px;
   background-color: white;
-  font-size: 25px;
   color: ${(props) => (props.isPrevActive ? "black" : "white")};
 `;
 
@@ -33,7 +31,7 @@ export const PageNumber = styled.span`
   display: flex;
   justify-content: center;
   width: 8%;
-  font-size: 25px;
+  font-size: 15px;
   cursor: pointer;
   color: ${(props) => (props.currentPage ? "orange" : "black")};
   font-weight: ${(props) => (props.currentPage ? "bold" : "normal")};

@@ -31,7 +31,7 @@ export default function LayoutHeader() {
   const router = useRouter();
 
   const onClickMoveHome = () => {
-    router.push("/");
+    router.push("/home/");
   };
 
   return (
