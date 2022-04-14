@@ -1,5 +1,5 @@
-import FireBaseBoardListUI from "./FirebaseBoardList.presenter";
+// import FireBaseBoardListUI from "./FirebaseBoardList.presenter";
 
-export default function FireBaseBoardList() {
-  return <FireBaseBoardListUI />;
-}
+// export default function FireBaseBoardList() {
+//   return <FireBaseBoardListUI />;
+// }

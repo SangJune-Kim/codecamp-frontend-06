@@ -10,6 +10,19 @@ const BoardListUI = (props: IBoardListUIProps) => {
       <S.BestBoardWrapper>
         가나다라마바사 베스트 게시물 자리자리
       </S.BestBoardWrapper>
+      <S.SearchWrapper>
+        <S.SearchBox>
+          <S.SearchImg src="/boards/list/search.png" />
+          <S.SearchInput
+            placeholder="제목을 입력하세요"
+            onChange={props.onChangeSearch}
+          />{" "}
+        </S.SearchBox>
+        <S.SearchDate />{" "}
+        {/* <S.SearchButton 
+        onClick={props.onClickSearch}
+        >검색하기</S.SearchButton> */}
+      </S.SearchWrapper>
       <S.ListWrapper>
         <S.ListTop>
           <S.ListNumber>ID</S.ListNumber>

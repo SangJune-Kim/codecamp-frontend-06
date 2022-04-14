@@ -18,9 +18,56 @@ export const BestBoardWrapper = styled.div`
   justify-content: center;
 `;
 
+export const SearchWrapper = styled.div`
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const SearchBox = styled.div`
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 600px;
+  border-radius: 10px;
+`;
+
+export const SearchImg = styled.img`
+  margin-left: 10px;
+`;
+
+export const SearchInput = styled.input`
+  background-color: #f2f2f2;
+  border: 0px;
+  margin-left: 10px;
+  width: 500px;
+`;
+
+export const SearchDate = styled.input`
+  border: 1px solid #bdbdbd;
+  background-color: white;
+  height: 40px;
+  width: 250px;
+  border-radius: 10px;
+`;
+
+export const SearchButton = styled.button`
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+`;
+
 export const ListWrapper = styled.div`
   width: 100%;
-  border-top: 2px solid black;
   border-bottom: 2px solid black;
   margin-bottom: 20px;
 `;
@@ -29,6 +76,7 @@ export const ListTop = styled.div`
   display: flex;
   width: 100%;
   padding: 10px 0;
+  border-top: 2px solid black;
 `;
 
 export const ListRow = styled.div`

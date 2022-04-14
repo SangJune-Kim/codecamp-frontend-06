@@ -1,7 +1,7 @@
 // BoardList Types
 
 import { ApolloQueryResult } from "@apollo/client";
-import { MouseEvent } from "react";
+import { ChangeEvent, MouseEvent } from "react";
 import {
   IQuery,
   IQueryFetchBoardsArgs,
@@ -16,6 +16,7 @@ export interface IBoardListUIProps {
     variables?: Partial<IQueryFetchBoardsArgs>
   ) => Promise<ApolloQueryResult<Pick<IQuery, "fetchBoards">>>;
   count?: number;
-  // 이거 물어봐
   onClickMoveNewBoard: () => void;
+  onChangeSearch: (event: ChangeEvent<HTMLInputElement>) => void;
+  // onClickSearch: (event: MouseEvent<HTMLButtonElement>) => void;
 }
