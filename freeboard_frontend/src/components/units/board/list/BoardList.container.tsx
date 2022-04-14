@@ -13,14 +13,13 @@ import _ from "lodash";
 const BoardList = () => {
   const { data, refetch } = useQuery(FETCH_BOARDS);
   const router = useRouter();
-  const { data: dataBoardsCount } = useQuery(FETCH_BOARDS_COUNT);
-  //   {  variables:{search: }
-  // );
-  // const [searchInput, setSearchInput] = useState("");
+  const { data: dataBoardsCount, refetch: refetchCount } =
+    useQuery(FETCH_BOARDS_COUNT);
 
-  // state를 만들어서 refetch를 하지말고 useState로 리랜더 되게 하면 새롭게 불러온다.
+  // const [searchInput, setSearchInput] = useState("");
+  // state를 만들어서 refetch를 안해도 useState로 리랜더 되게 하면 새롭게 불러온다.
   // 아니면 RefetchQueries를써서
-  // 아니면 새로운 state를 만들어서 search에다가 넣어줘
+  // 아니면 새로운 state를 만들어서 search에다가 넣어줘 <- refetch를 새로운 이름으로 지정해서 넣어줬음
 
   const lastPage = Math.ceil(dataBoardsCount?.fetchBoardsCount / 10);
 
@@ -41,6 +40,7 @@ const BoardList = () => {
     getDebounce(event.target.value);
     // setSearchInput(event.target.value);
     refetch({ search: event.target.value });
+    refetchCount({ search: event.target.value });
   };
 
   // const onClickSearch = () => {

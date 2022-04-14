@@ -25,6 +25,14 @@ const ProfileIcon = styled.img`
   height: 48px;
   width: 48px;
   margin-right: 50px;
+  margin-left: 50px;
+`;
+
+const MoveLoginButton = styled.button`
+  background-color: white;
+  border: 0px;
+  cursor: pointer;
+  margin-right: 20px;
 `;
 
 export default function LayoutHeader() {
@@ -34,10 +42,22 @@ export default function LayoutHeader() {
     router.push("/home/");
   };
 
+  const onClickMoveLogin = () => {
+    router.push("/login/");
+  };
+  const onClickMoveRegistration = () => {
+    router.push("/login/");
+  };
   return (
     <Wrapper>
       <HomeButton onClick={onClickMoveHome}>Walk</HomeButton>
-      <ProfileIcon src="/images/headerProfile.png" />
+      <div>
+        <MoveLoginButton onClick={onClickMoveLogin}>로그인</MoveLoginButton>
+        <MoveLoginButton onClick={onClickMoveRegistration}>
+          회원가입
+        </MoveLoginButton>
+        <ProfileIcon src="/images/headerProfile.png" />
+      </div>
     </Wrapper>
   );
 }

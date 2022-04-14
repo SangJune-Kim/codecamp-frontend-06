@@ -14,11 +14,13 @@ interface ILayoutProps {
   children: ReactNode;
 }
 
-const HIDDEN_PAGE = ["/"];
+const HIDDEN_PAGE = ["/", "/login"];
+// const HIDDEN_LOGIN = ["/login"];
 
 const Layout = (props: ILayoutProps) => {
   const router = useRouter();
   const isHidden = HIDDEN_PAGE.includes(router.asPath);
+  // const isLoginHidden = HIDDEN_LOGIN.includes(router.asPath);
   return (
     <div>
       <LayoutHeader></LayoutHeader>

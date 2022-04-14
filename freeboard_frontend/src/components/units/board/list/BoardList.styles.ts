@@ -31,7 +31,7 @@ export const SearchBox = styled.div`
   display: flex;
   align-items: center;
   height: 40px;
-  width: 600px;
+  width: 700px;
   border-radius: 10px;
 `;
 
@@ -43,14 +43,14 @@ export const SearchInput = styled.input`
   background-color: #f2f2f2;
   border: 0px;
   margin-left: 10px;
-  width: 500px;
+  width: 650px;
 `;
 
 export const SearchDate = styled.input`
   border: 1px solid #bdbdbd;
   background-color: white;
   height: 40px;
-  width: 250px;
+  width: 300px;
   border-radius: 10px;
 `;
 
