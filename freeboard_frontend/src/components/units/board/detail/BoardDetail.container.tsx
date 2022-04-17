@@ -39,8 +39,8 @@ const BoardDetail = () => {
           },
         ],
       });
-    } catch (error: any) {
-      Modal.error({ content: error.message });
+    } catch (error) {
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
 
@@ -55,8 +55,8 @@ const BoardDetail = () => {
           },
         ],
       });
-    } catch (error: any) {
-      Modal.error({ content: error.message });
+    } catch (error) {
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
 
@@ -67,8 +67,8 @@ const BoardDetail = () => {
       });
       Modal.success({ content: "삭제가 완료되었습니다." });
       router.push("/boards");
-    } catch (error: any) {
-      Modal.error({ content: error.message });
+    } catch (error) {
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
 

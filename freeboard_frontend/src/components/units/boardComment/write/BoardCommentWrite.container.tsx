@@ -72,7 +72,7 @@ const BoardCommentWrite = (props) => {
         setCommentContents("");
         setCommentRating(0);
       } catch (error) {
-        Modal.error({ content: error.message });
+        if (error instanceof Error) Modal.error({ content: error.message });
       }
     }
   };
@@ -108,7 +108,7 @@ const BoardCommentWrite = (props) => {
 
       props.setIsEdit?.(false);
     } catch (error) {
-      Modal.error({ content: error.message });
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
 

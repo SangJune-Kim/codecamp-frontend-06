@@ -46,7 +46,7 @@ const BoardCommentListItemUI = (props) => {
       });
       Modal.success({ content: "댓글 삭제가 완료되었습니다." });
     } catch (error) {
-      Modal.error({ content: error.message });
+      if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
 
