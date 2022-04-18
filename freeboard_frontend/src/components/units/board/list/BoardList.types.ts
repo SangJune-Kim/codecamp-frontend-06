@@ -19,4 +19,5 @@ export interface IBoardListUIProps {
   onClickMoveNewBoard: () => void;
   onChangeSearch: (event: ChangeEvent<HTMLInputElement>) => void;
   // onClickSearch: (event: MouseEvent<HTMLButtonElement>) => void;
+  keyWord?: String;
 }

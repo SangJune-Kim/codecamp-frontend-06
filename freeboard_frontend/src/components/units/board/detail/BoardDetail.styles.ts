@@ -54,11 +54,15 @@ export const TitleInput = styled.div`
   font-weight: 700;
   margin-bottom: 30px;
 `;
-export const ImgInput = styled.img`
+
+// 이미지 부분
+export const ImgWrapper = styled.div`
   width: 100%;
   height: 480px;
   margin-bottom: 30px;
 `;
+
+export const UploadImage = styled.img``;
 
 export const ContentsInput = styled.div`
   width: 100%;

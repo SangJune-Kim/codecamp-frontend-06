@@ -1,91 +1,61 @@
-// 목록 스타일즈 페이지
-
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 90%;
-  height: 100%;
+  width: 1200px;
+  height: auto;
+  margin: 50px 100px;
+`;
+
+export const TableTop = styled.div`
+  border-top: 2px solid gray;
+  margin-top: 20px;
+`;
+
+export const TableBottom = styled.div`
+  border-bottom: 2px solid gray;
+`;
+
+export const Row = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px 100px;
-  margin: 20px auto;
+  flex-direction: row;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid gray;
 `;
 
-export const BestBoardWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
-
-export const ListWrapper = styled.div`
-  width: 100%;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  margin-bottom: 20px;
-`;
-
-export const ListTop = styled.div`
-  display: flex;
-  width: 100%;
-  padding: 10px 0;
-`;
-
-export const ListRow = styled.div`
-  display: flex;
-  width: 100%;
-  border-top: 1px solid gray;
-  padding: 10px 0;
-`;
-
-export const ListNumber = styled.div`
+export const ColumnHeaderBasic = styled.div`
   width: 20%;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 `;
 
-export const ListTitle = styled.div`
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
+export const ColumnHeaderContents = styled.div`
+  width: 50%;
+  text-align: center;
 `;
 
-export const ListWriter = styled.div`
+export const ColumnBasic = styled.div`
   width: 20%;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 `;
 
-export const ListCreatedAt = styled.div`
-  width: 20%;
-  display: flex;
-  justify-content: center;
-`;
-
-export const BottomWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-`;
-
-export const PageNumber = styled.div`
-  display: flex;
-  align-items: center;
+export const ColumnContents = styled.div`
+  width: 50%;
+  text-align: center;
 `;
 
 export const PencilIcon = styled.img`
   margin-right: 10px;
 `;
 
-export const CreateNewBoardButton = styled.button`
-  border: 1px solid #bdbdbd;
-  background-color: #ffffff;
-  width: 150px;
+export const Button = styled.button`
+  width: 170px;
   height: 50px;
+  background-color: white;
+  border-radius: 15px;
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
+  margin-top: 20px;
 `;

@@ -2,6 +2,8 @@ import DaumPostcode from "react-daum-postcode";
 import { Modal } from "antd";
 import * as S from "./BoardWrite.styles";
 import { IBoardWriteUIProps } from "./BoardWrite.types";
+import UploadImg from "../../../commons/uploads/img/UploadImg.container";
+import { v4 as uuidv4 } from "uuid";
 
 const BoardWriteUI = (props: IBoardWriteUIProps) => {
   return (
@@ -15,6 +17,7 @@ const BoardWriteUI = (props: IBoardWriteUIProps) => {
               type="text"
               placeholder="이름을 적어주세요."
               onChange={props.onChangeWriter}
+              disabled={props.isEdit}
               defaultValue={props.data?.fetchBoard.writer}
             />
             <S.ErrorBox>{props.writerError}</S.ErrorBox>
@@ -96,20 +99,15 @@ const BoardWriteUI = (props: IBoardWriteUIProps) => {
       <S.BottomBox>
         <S.HeadText>사진첨부</S.HeadText>
         <S.PictureBox>
-          <S.Picture>
-            <p>➕</p>
-            <p>Upload</p>
-          </S.Picture>
-          <S.Picture>
-            <p>➕</p>
-            <p>Upload</p>
-          </S.Picture>
-          <S.Picture>
-            <p>➕</p>
-            <p>Upload</p>
-          </S.Picture>
+          {props.fileUrls.map((el, index) => (
+            <UploadImg
+              key={uuidv4()}
+              index={index}
+              fileUrl={el}
+              onChangeFileUrls={props.onChangeFileUrls}
+            />
+          ))}
         </S.PictureBox>
-
         <S.HeadText>메인 설정</S.HeadText>
         <S.SelectBox>
           <S.SelectYoutube>

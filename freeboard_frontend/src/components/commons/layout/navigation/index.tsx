@@ -37,7 +37,7 @@ export default function LayoutNavigation() {
   };
 
   const onClickMoveFirebaseBoard = () => {
-    // router.push("/firebaseBoards/");
+    router.push("/firebaseBoards/");
   };
 
   return (
@@ -48,7 +48,9 @@ export default function LayoutNavigation() {
       <NavigationBar></NavigationBar>
       <NavigationButton>중고마켓</NavigationButton>
       <NavigationBar></NavigationBar>
-      <NavigationButton onClick={onClickMoveFirebaseBoard}>파</NavigationButton>
+      <NavigationButton onClick={onClickMoveFirebaseBoard}>
+        파이어베이스 게시판
+      </NavigationButton>
     </Wrapper>
   );
 }

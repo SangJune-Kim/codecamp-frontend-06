@@ -1,12 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { firebaseApp } from "../../../../../pages/_app";
 import FireBaseBoardWriteUI from "./FirebaseBoardWrite.presenter";
-import {
-  collection,
-  getFirestore,
-  addDoc,
-  getDocs,
-} from "firebase/firestore/lite";
+import { collection, getFirestore, addDoc } from "firebase/firestore/lite";
 import { useRouter } from "next/router";
 
 export default function FireBaseBoardWrite() {
@@ -58,16 +53,6 @@ export default function FireBaseBoardWrite() {
     }
   };
 
-  // const onClickModal = () => {
-  //   setIsOpen((prev) => !prev);
-  // };
-
-  // const onClickPostCode = (address: Address) => {
-  //   setIsOpen((prev) => !prev);
-  //   setAddress(address.address);
-  //   setZipcode(address.zonecode);
-  // };
-
   const handleRegister = async () => {
     try {
       await addDoc(board, {
@@ -79,7 +64,7 @@ export default function FireBaseBoardWrite() {
       alert("등록되었습니다.");
       // const result = getDocs(board);
       // console.log(result);
-      // router.push("/firebaseBoards/");
+      router.push("/firebaseBoards/");
     } catch (error) {
       if (error instanceof Error) alert(error.message);
     }
@@ -100,10 +85,6 @@ export default function FireBaseBoardWrite() {
       onChangeTitle={onChangeTitle}
       onChangeContents={onChangeContents}
       handleRegister={handleRegister}
-      // onClickModal={onClickModal}
-      // isOpen={isOpen}
-      // address={address}
-      // zipcode={zipcode}
     />
   );
 }

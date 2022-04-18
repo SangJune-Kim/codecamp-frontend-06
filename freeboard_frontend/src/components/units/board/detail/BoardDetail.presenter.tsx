@@ -24,7 +24,16 @@ const BoardDetailUI = (props: IBoardDetailProps) => {
         </S.Info>
         <S.ContentsWrapper>
           <S.TitleInput>{props.data?.fetchBoard.title}</S.TitleInput>
-          <S.ImgInput src="/backgroundImg.png" />
+          <S.ImgWrapper>
+            {props.data?.fetchBoard.images
+              ?.filter((el) => el)
+              .map((el) => (
+                <S.UploadImage
+                  key={el}
+                  src={`https://storage.googleapis.com/${el}`}
+                />
+              ))}
+          </S.ImgWrapper>
           <S.ContentsInput>{props.data?.fetchBoard.contents}</S.ContentsInput>
         </S.ContentsWrapper>
         <S.YoutubeBox>

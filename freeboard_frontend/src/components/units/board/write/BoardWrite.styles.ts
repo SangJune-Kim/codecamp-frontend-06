@@ -105,19 +105,10 @@ export const BottomBox = styled.div`
   flex-direction: column;
 `;
 
-export const Picture = styled.button`
-  width: 78px;
-  height: 78px;
-  background-color: #bdbdbd;
-  border: 0px;
-  font-size: 12px;
-`;
-
 export const PictureBox = styled.div`
   display: flex;
   flex-direction: row;
-  width: 280px;
-  justify-content: space-between;
+  width: 100%;
   padding-bottom: 20px;
 `;
 export const SelectBox = styled.div`

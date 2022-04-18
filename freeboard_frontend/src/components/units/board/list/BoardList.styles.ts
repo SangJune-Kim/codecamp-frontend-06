@@ -52,6 +52,7 @@ export const SearchDate = styled.input`
   height: 40px;
   width: 300px;
   border-radius: 10px;
+  padding: 5px 60px;
 `;
 
 export const SearchButton = styled.button`
@@ -97,6 +98,10 @@ export const ListTitle = styled.div`
   display: flex;
   justify-content: center;
   cursor: pointer;
+`;
+
+export const ListTitleKeyWord = styled.span`
+  color: ${(props) => (props.isMatched ? "blue" : "black")};
 `;
 
 export const ListWriter = styled.div`

@@ -14,6 +14,7 @@ export interface IBoardWriteUIProps {
   onChangePassword: (event: ChangeEvent<HTMLInputElement>) => void;
   onChangeTitle: (event: ChangeEvent<HTMLInputElement>) => void;
   onChangeContents: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+  onChangeFileUrls: (event: ChangeEvent<HTMLInputElement>) => void;
   handleRegister: () => void;
   handleEdit: () => void;
   writerError: string;
@@ -23,7 +24,9 @@ export interface IBoardWriteUIProps {
   isOpen: boolean;
   youtubeUrl: string;
   onClickPostCode: (address: Address) => void;
+  onClickUploadFile: () => void;
   onClickModal: () => void;
   address: string;
   zipcode: string;
+  fileRef: string;
 }

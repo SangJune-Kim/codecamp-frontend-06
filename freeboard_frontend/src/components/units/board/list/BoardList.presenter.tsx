@@ -3,6 +3,7 @@ import * as S from "./BoardList.styles";
 import { getDate } from "../../../../commons/libraries/utils";
 import Pagination from "../../../commons/paginations/boards/Pagination";
 import { IBoardListUIProps } from "./BoardList.types";
+import { v4 as uuidv4 } from "uuid";
 
 const BoardListUI = (props: IBoardListUIProps) => {
   return (
@@ -18,7 +19,7 @@ const BoardListUI = (props: IBoardListUIProps) => {
             onChange={props.onChangeSearch}
           />{" "}
         </S.SearchBox>
-        <S.SearchDate />{" "}
+        <S.SearchDate placeholder="2022.01.01 ~ 2022.04.18" />{" "}
         {/* <S.SearchButton 
         onClick={props.onClickSearch}
         >검색하기</S.SearchButton> */}
@@ -36,7 +37,19 @@ const BoardListUI = (props: IBoardListUIProps) => {
               {String(el._id).slice(-4).toUpperCase()}
             </S.ListNumber>
             <S.ListTitle id={el._id} onClick={props.onClickMoveDetail}>
-              {el.title}
+              {el.title
+                .replaceAll(props.keyWord, `))@_#${props.keyWord}))@_#`)
+                .split("))@_#")
+                .map((word) => (
+                  <S.ListTitleKeyWord
+                    key={uuidv4()}
+                    isMatched={props.keyWord === word}
+                    onClick={props.onClickMoveDetail}
+                    id={el._id}
+                  >
+                    {word}
+                  </S.ListTitleKeyWord>
+                ))}
             </S.ListTitle>
             <S.ListWriter>{el.writer}</S.ListWriter>
             <S.ListCreatedAt>{getDate(el.createdAt)}</S.ListCreatedAt>

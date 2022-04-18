@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import {
   ChangeEvent,
   MouseEvent,
+  useState,
   // , useState
 } from "react";
 import _ from "lodash";
@@ -15,6 +16,7 @@ const BoardList = () => {
   const router = useRouter();
   const { data: dataBoardsCount, refetch: refetchCount } =
     useQuery(FETCH_BOARDS_COUNT);
+  const [keyWord, setKeyWord] = useState("");
 
   // const [searchInput, setSearchInput] = useState("");
   // state를 만들어서 refetch를 안해도 useState로 리랜더 되게 하면 새롭게 불러온다.
@@ -34,6 +36,7 @@ const BoardList = () => {
 
   const getDebounce = _.debounce((data) => {
     refetch({ search: data });
+    setKeyWord(data);
   }, 200);
 
   const onChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
@@ -56,6 +59,7 @@ const BoardList = () => {
       // onClickSearch={onClickSearch}
       onClickMoveDetail={onClickMoveDetail}
       onClickMoveNewBoard={onClickMoveNewBoard}
+      keyWord={keyWord}
     />
   );
 };
