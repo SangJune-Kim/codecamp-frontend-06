@@ -5,7 +5,7 @@ export default function LoginPageUI(props) {
     <S.Wrapper>
       <S.HeaderWrapper>로그인</S.HeaderWrapper>
       <S.HeaderComments>카카오톡,네이버,구글로도</S.HeaderComments>
-      <S.HeaderComments>로그인할 수 있습니다.</S.HeaderComments>
+      <S.HeaderComments>로그인할 수 있을 것 같아? 어림도 없어</S.HeaderComments>
       <S.LoginInput type="text" placeholder="이메일을 입력하세요" />
       <S.LoginInput type="password" placeholder="비밀번호를 입력하세요" />
       <S.LoginButton>로그인</S.LoginButton>

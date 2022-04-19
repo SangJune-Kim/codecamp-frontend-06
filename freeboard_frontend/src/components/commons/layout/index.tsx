@@ -14,8 +14,7 @@ interface ILayoutProps {
   children: ReactNode;
 }
 
-const HIDDEN_PAGE = ["/", "/login"];
-// const HIDDEN_LOGIN = ["/login"];
+const HIDDEN_PAGE = ["/", "/login", "/register"];
 
 const Layout = (props: ILayoutProps) => {
   const router = useRouter();

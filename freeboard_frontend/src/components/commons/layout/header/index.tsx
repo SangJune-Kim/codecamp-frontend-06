@@ -45,15 +45,15 @@ export default function LayoutHeader() {
   const onClickMoveLogin = () => {
     router.push("/login/");
   };
-  const onClickMoveRegistration = () => {
-    router.push("/login/");
+  const onClickMoveRegister = () => {
+    router.push("/register/");
   };
   return (
     <Wrapper>
       <HomeButton onClick={onClickMoveHome}>Walk</HomeButton>
       <div>
         <MoveLoginButton onClick={onClickMoveLogin}>로그인</MoveLoginButton>
-        <MoveLoginButton onClick={onClickMoveRegistration}>
+        <MoveLoginButton onClick={onClickMoveRegister}>
           회원가입
         </MoveLoginButton>
         <ProfileIcon src="/images/headerProfile.png" />

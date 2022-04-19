@@ -126,7 +126,7 @@ const BoardWrite = (props: IBoardWriteProps) => {
               password: password,
               title: title,
               contents: contents,
-              images: [fileUrls],
+              images: fileUrls,
               youtubeUrl: youtubeUrl,
               boardAddress: {
                 zipcode: zipcode,
