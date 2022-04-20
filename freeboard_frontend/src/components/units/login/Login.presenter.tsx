@@ -16,7 +16,7 @@ export default function LoginPageUI(props) {
         placeholder="비밀번호를 입력하세요"
         onChange={props.onChangeInput("password")}
       />
-      <S.LoginButton>로그인</S.LoginButton>
+      <S.LoginButton onClick={props.onClickLogIn}>로그인</S.LoginButton>
       <S.LoginOrDiv>
         <S.LoginOrCenterLine></S.LoginOrCenterLine>
         <span>또는</span>
@@ -26,9 +26,13 @@ export default function LoginPageUI(props) {
       <S.NaverLoginButton>네이버로 로그인</S.NaverLoginButton>
       <S.GoogleLoginButton>구글로 로그인</S.GoogleLoginButton>
       <S.LoginBottomMenu>
-        <S.LoginBottomMenuButton>아이디 찾기</S.LoginBottomMenuButton>
+        <S.LoginBottomMenuButton onClick={props.onClickMoveRegister}>
+          아이디 찾기
+        </S.LoginBottomMenuButton>
         <S.LoginBottomMenuSideBar></S.LoginBottomMenuSideBar>
-        <S.LoginBottomMenuButton>비밀번호 찾기</S.LoginBottomMenuButton>
+        <S.LoginBottomMenuButton onClick={props.onClickMoveRegister}>
+          비밀번호 찾기
+        </S.LoginBottomMenuButton>
         <S.LoginBottomMenuSideBar></S.LoginBottomMenuSideBar>
         <S.LoginBottomMenuButton onClick={props.onClickMoveRegister}>
           회원가입

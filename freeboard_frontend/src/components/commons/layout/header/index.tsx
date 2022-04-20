@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
+import { useRecoilState } from "recoil";
+import { accessTokenState } from "../../../../commons/store";
 
 const Wrapper = styled.div`
   height: 100px;
@@ -48,11 +50,17 @@ export default function LayoutHeader() {
   const onClickMoveRegister = () => {
     router.push("/register/");
   };
+  const [accessToken] = useRecoilState(accessTokenState);
+
   return (
     <Wrapper>
       <HomeButton onClick={onClickMoveHome}>Walk</HomeButton>
       <div>
-        <MoveLoginButton onClick={onClickMoveLogin}>로그인</MoveLoginButton>
+        {accessToken ? (
+          <div></div>
+        ) : (
+          <MoveLoginButton onClick={onClickMoveLogin}>로그인</MoveLoginButton>
+        )}
         <MoveLoginButton onClick={onClickMoveRegister}>
           회원가입
         </MoveLoginButton>
