@@ -17,6 +17,7 @@ const BasketButton = styled.button`
 interface IProps {
   data?: Pick<IQuery, "fetchBoards">;
   el?: any;
+  setChangeToday: (prev: any) => boolean;
 }
 
 export default function QuizToday(props: IProps) {
@@ -41,14 +42,14 @@ export default function QuizToday(props: IProps) {
     if (temp.length === 1) {
       alert("이미 담으신 물품입니다.");
       setHasBasket(true);
-      props.setChangeToday((prev) => !prev);
+      props.setChangeToday((prev: boolean) => !prev);
       return;
     }
     const { __typename, ...rest } = el;
     baskets.push(rest);
     localStorage.setItem(today, JSON.stringify(baskets));
     setHasBasket(true);
-    props.setChangeToday((prev) => !prev);
+    props.setChangeToday((prev: boolean) => !prev);
   };
 
   const onClickDeleteBasket = (el: IBoard) => () => {
@@ -59,7 +60,7 @@ export default function QuizToday(props: IProps) {
     );
     localStorage.setItem(today, JSON.stringify(newBaskets));
     setHasBasket(false);
-    props.setChangeToday((prev) => !prev);
+    props.setChangeToday((prev: boolean) => !prev);
   };
 
   return (

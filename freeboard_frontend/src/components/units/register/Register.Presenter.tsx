@@ -7,17 +7,26 @@ export default function RegisterUI(props) {
       <S.NecessaryWrapper>
         <S.NameBox>
           <S.InputTitle>이름</S.InputTitle>
-          <S.ProfileInput type="text" />
+          <S.ProfileInput
+            type="text"
+            placeholder="이름을 입력하세요"
+            onChange={props.onChangeInput("name")}
+          />
         </S.NameBox>
         <S.EmailBox>
           <S.InputTitle>이메일</S.InputTitle>
-          <S.ProfileInput type="text" />
+          <S.ProfileInput
+            type="text"
+            placeholder="이메일을 입력하세요"
+            onChange={props.onChangeInput("email")}
+          />
         </S.EmailBox>
         <S.PasswordBox>
           <S.InputTitle>비밀번호</S.InputTitle>
           <S.ProfileInput
             type="password"
             placeholder="특수문자를 포함한 10 글자 이상"
+            onChange={props.onChangeInput("password")}
           />
         </S.PasswordBox>
         <S.PhoneCheckBox>
@@ -33,12 +42,11 @@ export default function RegisterUI(props) {
         </S.PhoneCheckValidation>
       </S.NecessaryWrapper>
       <div>
-        <div>주소</div>
-      </div>
-      <div>
         <div>동의</div>
       </div>
-      <S.RegisterButton>회원가입</S.RegisterButton>
+      <S.RegisterButton onClick={props.onClickRegister}>
+        회원가입
+      </S.RegisterButton>
       <div onClick={props.onClickMoveLogin}>로그인</div>
     </S.Wrapper>
   );

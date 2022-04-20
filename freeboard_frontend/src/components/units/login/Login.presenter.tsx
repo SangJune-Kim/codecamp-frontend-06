@@ -6,8 +6,16 @@ export default function LoginPageUI(props) {
       <S.HeaderWrapper>로그인</S.HeaderWrapper>
       <S.HeaderComments>카카오톡,네이버,구글로도</S.HeaderComments>
       <S.HeaderComments>로그인할 수 있을 것 같아? 어림도 없어</S.HeaderComments>
-      <S.LoginInput type="text" placeholder="이메일을 입력하세요" />
-      <S.LoginInput type="password" placeholder="비밀번호를 입력하세요" />
+      <S.LoginInput
+        type="text"
+        placeholder="이메일을 입력하세요"
+        onChange={props.onChangeInput("email")}
+      />
+      <S.LoginInput
+        type="password"
+        placeholder="비밀번호를 입력하세요"
+        onChange={props.onChangeInput("password")}
+      />
       <S.LoginButton>로그인</S.LoginButton>
       <S.LoginOrDiv>
         <S.LoginOrCenterLine></S.LoginOrCenterLine>
@@ -22,7 +30,9 @@ export default function LoginPageUI(props) {
         <S.LoginBottomMenuSideBar></S.LoginBottomMenuSideBar>
         <S.LoginBottomMenuButton>비밀번호 찾기</S.LoginBottomMenuButton>
         <S.LoginBottomMenuSideBar></S.LoginBottomMenuSideBar>
-        <S.LoginBottomMenuButton>회원가입</S.LoginBottomMenuButton>
+        <S.LoginBottomMenuButton onClick={props.onClickMoveRegister}>
+          회원가입
+        </S.LoginBottomMenuButton>
       </S.LoginBottomMenu>
     </S.Wrapper>
   );
