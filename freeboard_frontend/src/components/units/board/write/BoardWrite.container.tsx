@@ -7,6 +7,7 @@ import { Modal } from "antd";
 import { IBoardWriteProps } from "./BoardWrite.types";
 import { IUpdateBoardInput } from "../../../../commons/types/generated/types";
 import { Address } from "react-daum-postcode";
+import { withAuth } from "../../../commons/hooks/withAuth";
 
 const BoardWrite = (props: IBoardWriteProps) => {
   const [writer, setWriter] = useState("");
@@ -206,4 +207,4 @@ const BoardWrite = (props: IBoardWriteProps) => {
     />
   );
 };
-export default BoardWrite;
+export default withAuth(BoardWrite);

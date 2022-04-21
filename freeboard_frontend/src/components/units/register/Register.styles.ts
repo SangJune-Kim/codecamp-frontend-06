@@ -17,6 +17,24 @@ export const HeaderWrapper = styled.div`
   font-weight: 700;
 `;
 
+// 공통부분
+export const ProfileInput = styled.input`
+  border: 1px solid lightgray;
+  background-color: white;
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  color: black;
+  padding-left: 10px;
+`;
+
+export const ProfileError = styled.div`
+  color: red;
+  font-size: 10px;
+  word-break: break-all;
+  width: 170px;
+`;
+
 // 필수 구역
 export const NecessaryWrapper = styled.div`
   display: flex;
@@ -84,21 +102,11 @@ export const PhoneCheckInput = styled.input`
   padding-left: 10px;
 `;
 
-// 공통인풋
-export const ProfileInput = styled.input`
-  border: 1px solid lightgray;
-  background-color: white;
-  width: 250px;
-  height: 40px;
-  border-radius: 10px;
-  color: black;
-  padding-left: 10px;
-`;
-
 // 회원가입 버튼
+
 export const RegisterButton = styled.button`
   border: 1px solid white;
-  background-color: #4f4f4f;
+  background-color: ${(props) => (props.isActive ? "#4f4f4f" : "none")};
   margin-bottom: 10px;
   margin-top: 20px;
   width: 250px;

@@ -29,6 +29,7 @@ export default function LoginPage() {
   };
 
   const onClickLogIn = async () => {
+    console.log(loginChangeInputs);
     try {
       const result = await loginUser({
         variables: {

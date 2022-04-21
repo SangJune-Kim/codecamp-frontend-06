@@ -9,6 +9,7 @@ import {
   DELETE_BOARD,
 } from "./BoardDetail.queries";
 import { Modal } from "antd";
+import { withAuth } from "../../../commons/hooks/withAuth";
 
 const BoardDetail = () => {
   const router = useRouter();
@@ -85,4 +86,4 @@ const BoardDetail = () => {
     </>
   );
 };
-export default BoardDetail;
+export default withAuth(BoardDetail);
