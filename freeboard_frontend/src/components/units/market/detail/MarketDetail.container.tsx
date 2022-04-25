@@ -4,7 +4,11 @@ import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import MarketDetailUI from "./MarketDetail.presenter";
-import { DELETE_USEDITEM, FETCH_USEDITEM } from "./MarketDetail.queries";
+import {
+  DELETE_USEDITEM,
+  FETCH_USEDITEM,
+  USEDITEM_PICK,
+} from "./MarketDetail.queries";
 
 export default function MarketDetail() {
   const router = useRouter();
@@ -13,6 +17,7 @@ export default function MarketDetail() {
   });
 
   const [deleteUseditem] = useMutation(DELETE_USEDITEM);
+  const [toggleUseditemPick] = useMutation(USEDITEM_PICK);
 
   const onClickMoveEditPage = () => {
     router.push(`/markets/${router.query.boardId}/edit`);
@@ -34,12 +39,29 @@ export default function MarketDetail() {
     }
   };
 
+  const onClickPick = async () => {
+    try {
+      await toggleUseditemPick({
+        variables: { useditemId: String(router.query.useditemId) },
+        refetchQueries: [
+          {
+            query: FETCH_USEDITEM,
+            variables: { useditemId: String(router.query.useditemId) },
+          },
+        ],
+      });
+    } catch (error) {
+      if (error instanceof Error) Modal.error({ content: error.message });
+    }
+  };
+
   return (
     <MarketDetailUI
       data={data}
       onClickMoveEditPage={onClickMoveEditPage}
       onClickMoveListPage={onClickMoveListPage}
-      onClickDeleteBoard={onClickDelete}
+      onClickDelete={onClickDelete}
+      onClickPick={onClickPick}
     />
   );
 }

@@ -8,13 +8,13 @@ export default function CallbackPromiseAsyncAwaitPage() {
     aaa.addEventListener("load", (res) => {
       const num = res.target.response.split(" ")[0]; // 랜덤 숫자
       const bbb = new XMLHttpRequest();
-      bbb.open("get", `https://koreanjson.com/${num}`);
+      bbb.open("get", `https://koreanjson.com/posts/${num}`);
       bbb.send();
       bbb.addEventListener("load", (res) => {
         const userId = res.target.response.UserId;
 
         const ccc = new XMLHttpRequest();
-        ccc.open("get", `https://koreanjson.com/posts?useId=${userId}`);
+        ccc.open("get", `https://koreanjson.com/posts?userId=${userId}`);
         ccc.send();
         ccc.addEventListener("load", (res) => {
           console.log(res); // 최종 결과값!!
