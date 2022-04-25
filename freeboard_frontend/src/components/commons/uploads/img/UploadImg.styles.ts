@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
 export const UploadButton = styled.div`
-  width: 80px;
-  height: 80px;
+  width: 200px;
+  height: 200px;
   background-color: #fafafa;
   border: 1px dashed #e5e5e5;
   border-radius: 5px;
@@ -18,6 +18,7 @@ export const UploadFileHidden = styled.input`
 `;
 
 export const UploadImage = styled.img`
-  width: 80px;
-  height: 80px;
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
 `;

@@ -138,8 +138,8 @@ const BoardWrite = (props: IBoardWriteProps) => {
         });
         Modal.success({ content: "등록이 완료되었습니다." });
         router.push(`/boards/${result.data.createBoard._id}`);
-      } catch (error: any) {
-        Modal.error({ content: error.message });
+      } catch (error) {
+        if (error instanceof Error) Modal.error({ content: error.message });
       }
     }
   };

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled/";
+import { useRouter } from "next/router";
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,9 +13,13 @@ const Wrapper = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const onClickMoveHome = () => {
+    router.push("/home/");
+  };
   return (
     <Wrapper>
-      <div></div>
+      <button onClick={onClickMoveHome}>홈으로</button>
       <div>랜딩 페이지</div>
       <div>랜딩 페이지</div>
       <div>랜딩 페이지</div>

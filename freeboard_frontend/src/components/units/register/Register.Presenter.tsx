@@ -51,7 +51,8 @@ export default function RegisterUI(props) {
             <S.PhoneCheckInput type="text" />
           </S.PhoneCheckValidation>
           <S.RegisterButton
-            onClick={props.onClickRegister}
+            type="submit"
+            // onClick={props.onClickRegister}
             isActive={props.formState.isValid}
           >
             회원가입

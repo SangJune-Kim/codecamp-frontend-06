@@ -8,23 +8,37 @@ import { useRouter } from "next/router";
 const Body = styled.div`
   width: 100%;
   height: 100%;
+  padding-bottom: 20px;
 `;
 
 interface ILayoutProps {
   children: ReactNode;
 }
 
-const HIDDEN_PAGE = ["/", "/login", "/register"];
+const HIDDEN_HEADER = ["/"];
+const HIDDEN_BANNER = [
+  "/",
+  "/login",
+  "/register",
+  "/markets/",
+  "/markets/new",
+  "/markets/useditemId",
+  "/boards",
+  "/firebaseBoards",
+];
+const HIDDEN_NAVIGATION = ["/", "/login", "/register"];
 
 const Layout = (props: ILayoutProps) => {
   const router = useRouter();
-  const isHidden = HIDDEN_PAGE.includes(router.asPath);
-  // const isLoginHidden = HIDDEN_LOGIN.includes(router.asPath);
+  const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
+  const isHiddenBanner = HIDDEN_BANNER.includes(router.asPath);
+  const isHiddenNavigation = HIDDEN_NAVIGATION.includes(router.asPath);
+
   return (
     <div>
-      <LayoutHeader></LayoutHeader>
-      {!isHidden && <LayoutBanner></LayoutBanner>}
-      {!isHidden && <LayoutNavigation></LayoutNavigation>}
+      {!isHiddenHeader && <LayoutHeader></LayoutHeader>}
+      {!isHiddenBanner && <LayoutBanner></LayoutBanner>}
+      {!isHiddenNavigation && <LayoutNavigation></LayoutNavigation>}
       <Body>{props.children}</Body>
     </div>
   );

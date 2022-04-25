@@ -40,13 +40,17 @@ export default function LayoutNavigation() {
     router.push("/firebaseBoards/");
   };
 
+  const onClickMoveMarket = () => {
+    router.push("/markets/");
+  };
+
   return (
     <Wrapper>
       <NavigationButton onClick={onClickMoveHome}>HOME </NavigationButton>
       <NavigationBar></NavigationBar>
-      <NavigationButton onClick={onClickMoveBoards}>게시판</NavigationButton>
+      <NavigationButton onClick={onClickMoveMarket}>중고마켓</NavigationButton>
       <NavigationBar></NavigationBar>
-      <NavigationButton>중고마켓</NavigationButton>
+      <NavigationButton onClick={onClickMoveBoards}>게시판</NavigationButton>
       <NavigationBar></NavigationBar>
       <NavigationButton onClick={onClickMoveFirebaseBoard}>
         파이어베이스 게시판

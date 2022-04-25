@@ -67,7 +67,7 @@ export default function Pagination(props) {
             {index + startPage}
           </S.PageNumber>
         ) : (
-          <S.PageNumber></S.PageNumber>
+          <S.PageNumber key={index + startPage}></S.PageNumber>
         )
       )}
       <S.PageNextButton onClick={onClickNextPage} isNextActive={isNextActive}>

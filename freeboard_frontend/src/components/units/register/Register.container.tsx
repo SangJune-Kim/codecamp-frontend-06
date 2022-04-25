@@ -1,7 +1,7 @@
 import { useMutation } from "@apollo/client";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
-import RegisterUI from "./Register.Presenter";
+import RegisterUI from "./Register.presenter";
 import { CREATE_USER } from "./Register.queries";
 // import { useState } from "react";
 import { Modal } from "antd";
