@@ -39,7 +39,7 @@ export default function MarketNewUI(props) {
           />
           <S.CommonsError>
             {props.formState.errors.contents?.message}
-          </S.CommonsError>{" "}
+          </S.CommonsError>
         </S.CommonsInputWrapper>
         <S.CommonsInputWrapper>
           <S.CommonsInputTitle>판매 가격</S.CommonsInputTitle>

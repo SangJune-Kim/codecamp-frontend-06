@@ -1,7 +1,4 @@
-import {
-  HeartFilled,
-  // HeartOutlined
-} from "@ant-design/icons";
+import Icon, { HeartFilled, HeartOutlined } from "@ant-design/icons";
 import styled from "@emotion/styled";
 
 // 전체
@@ -53,7 +50,26 @@ export const IconBox = styled.div`
 export const ProfileImg = styled.img`
   margin-right: 20px;
 `;
+export const Writer = styled.div``;
 export const CreatedAt = styled.div``;
+
+// picked
+export const ProductProfilePicked = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+  /* width: 300px; */
+`;
+// export const PickHeart = styled(HeartFilled)`
+//   margin-bottom: 10px;
+//   cursor: pointer;
+// `;
+
+export const PickHeart = styled.img`
+  margin-bottom: 10px;
+  cursor: pointer;
+`;
 
 // 바디 부분
 export const BodyWrapper = styled.div`
@@ -92,29 +108,54 @@ export const ProductPrice = styled.div`
   font-size: 30px;
   font-family: "NanumBarunGothicBold";
   font-weight: 700;
+  margin-bottom: 30px;
 `;
 
-// picked
-export const ProductProfilePicked = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* margin-right: 10px; */
-  width: 50px;
+export const ProductContents = styled.div`
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+  margin-bottom: 30px;
+`;
+export const ProductTags = styled.div`
+  width: 100%;
+  color: #bdbdbd;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
 `;
 
-export const PickIcon = styled(HeartFilled)`
-  color: #ffd600;
-  margin-bottom: 10px;
+// 이미지 부분
+export const ProductImage = styled.div`
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 30px;
+`;
+export const UploadImage = styled.img`
+  width: 320px;
+  margin-right: 10px;
 `;
 
 // 지도 부분
-
 export const MapWrapper = styled.div`
   width: 100%;
+  height: auto;
   border-bottom: 1px solid gray;
   margin-bottom: 30px;
   padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: black; */
+`;
+
+export const ProductMap = styled.div`
+  width: 480px;
+  height: 250px;
+  background-color: black;
 `;
 
 // 버튼 부분

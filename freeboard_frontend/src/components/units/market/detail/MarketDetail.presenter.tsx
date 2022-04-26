@@ -1,5 +1,7 @@
 // 마켓 상세페이지 프레젠터
+import { HeartFilled } from "@ant-design/icons";
 import { getDate } from "../../../../commons/libraries/utils";
+import MarketDetailSlider from "../../../commons/slider/marketDetail";
 import * as S from "./MarketDetail.styles";
 
 export default function MarketDetailUI(props) {
@@ -9,7 +11,7 @@ export default function MarketDetailUI(props) {
         <S.ProfileBox>
           <S.ProfileImg src="/Profile.png" />
           <S.Profile>
-            {/* <S.Writer>{props.data?.fetchBoard.writer}</S.Writer> */}
+            <S.Writer>{props.data?.fetchUseditem.seller.name}</S.Writer>
             <S.CreatedAt>
               {getDate(props.data?.fetchUseditem.createdAt)}
             </S.CreatedAt>
@@ -26,16 +28,32 @@ export default function MarketDetailUI(props) {
             <S.ProductName>{props.data?.fetchUseditem.name}</S.ProductName>
             <S.ProductPrice>{props.data?.fetchUseditem.price}</S.ProductPrice>
           </S.ProductProfileDetail>
+          {/* <HeartFilled style={{ fontSize: "300px", color: "#08c" }} /> */}
           <S.ProductProfilePicked>
-            <S.PickIcon />
+            <S.PickHeart src="/images/pick.png" onClick={props.onClickPick} />
             <div>{props.data?.fetchUseditem.pickedCount}</div>
           </S.ProductProfilePicked>
         </S.ProductProfileWrapper>
-        <div>picture</div>
-        <div>details</div>
-        <div>tags</div>
+        <S.ProductImage>
+          {props.data?.fetchUseditem.images
+            .filter((el) => el)
+            .map((el) => (
+              <S.UploadImage
+                key={el}
+                src={`https://storage.googleapis.com/${el}`}
+              />
+            ))}
+        </S.ProductImage>
+        {/* <MarketDetailSlider /> */}
+        <S.ProductContents>
+          {props.data?.fetchUseditem.contents}
+        </S.ProductContents>
+        <S.ProductTags>{props.data?.fetchUseditem.tags}</S.ProductTags>
       </S.BodyWrapper>
-      <S.MapWrapper>mapWrapper</S.MapWrapper>
+      <S.MapWrapper>
+        mapWrapper
+        <S.ProductMap></S.ProductMap>
+      </S.MapWrapper>
       <S.ButtonWrapper>
         <S.ListButton onClick={props.onClickMoveListPage}>
           목록으로

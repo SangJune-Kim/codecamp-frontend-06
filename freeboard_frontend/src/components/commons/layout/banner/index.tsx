@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SliderComponent from "../../slider";
+import SliderComponent from "../../slider/banner";
 
 const Wrapper = styled.div`
   height: 300px;
