@@ -6,12 +6,38 @@ import MarketListUI from "./MarketList.presenter";
 import { FETCH_USEDITEMS } from "./MarketList.queries";
 
 export default function MarketList() {
-  const { data } = useQuery(FETCH_USEDITEMS);
+  const { data, fetchMore } = useQuery(FETCH_USEDITEMS);
   const router = useRouter();
 
   const onClickNewItem = () => {
     router.push("/markets/new");
   };
 
-  return <MarketListUI data={data} onClickNewItem={onClickNewItem} />;
+  const onLoadMore = () => {
+    if (!data) return;
+
+    fetchMore({
+      variables: {
+        page: Math.ceil(data?.fetchUseditems.length / 10) + 1,
+      },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        if (!fetchMoreResult.fetchUseditems)
+          return { fetchUseditems: [...prev.fetchUseditems] };
+        return {
+          fetchUseditems: [
+            ...prev.fetchUseditems,
+            ...fetchMoreResult.fetchUseditems,
+          ],
+        };
+      },
+    });
+  };
+
+  return (
+    <MarketListUI
+      onLoadMore={onLoadMore}
+      data={data}
+      onClickNewItem={onClickNewItem}
+    />
+  );
 }

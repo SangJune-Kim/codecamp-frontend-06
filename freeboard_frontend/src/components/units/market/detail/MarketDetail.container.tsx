@@ -30,7 +30,7 @@ export default function MarketDetail() {
   const onClickDelete = async () => {
     try {
       await deleteUseditem({
-        variables: { boardId: String(router.query.boardId) },
+        variables: { useditemId: String(router.query.boardId) },
       });
       Modal.success({ content: "삭제가 완료되었습니다." });
       router.push("/markets");

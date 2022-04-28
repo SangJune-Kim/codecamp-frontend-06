@@ -1,5 +1,4 @@
 // 마켓 상세페이지 프레젠터
-import { HeartFilled } from "@ant-design/icons";
 import { getDate } from "../../../../commons/libraries/utils";
 import MarketDetailSlider from "../../../commons/slider/marketDetail";
 import * as S from "./MarketDetail.styles";
@@ -28,7 +27,6 @@ export default function MarketDetailUI(props) {
             <S.ProductName>{props.data?.fetchUseditem.name}</S.ProductName>
             <S.ProductPrice>{props.data?.fetchUseditem.price}</S.ProductPrice>
           </S.ProductProfileDetail>
-          {/* <HeartFilled style={{ fontSize: "300px", color: "#08c" }} /> */}
           <S.ProductProfilePicked>
             <S.PickHeart src="/images/pick.png" onClick={props.onClickPick} />
             <div>{props.data?.fetchUseditem.pickedCount}</div>

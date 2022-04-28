@@ -7,6 +7,7 @@ export const FETCH_USEDITEMS = gql`
       name
       remarks
       contents
+      tags
       price
       images
       pickedCount
@@ -19,8 +20,11 @@ export const FETCH_USEDITEMS = gql`
         updatedAt
         deletedAt
       }
-      buyer
-      seller
+      seller {
+        _id
+        name
+        picture
+      }
       soldAt
       createdAt
       updatedAt

@@ -14,9 +14,10 @@ const schema = yup.object({
   remarks: yup.string().required("상품에 대한 설명을 한 줄로 요약해주세요"),
   contents: yup.string().required("상품에 대한 설명을 작성해주세요"),
   price: yup
-    .string()
-    .required("상품 가격을 설정해주세요")
-    .matches(/^(?=.*\d)/, "숫자만 입력 가능합니다."),
+    .number()
+    .typeError("숫자만 입력가능합니다.")
+    .required("상품 가격을 설정해주세요"),
+  // .matches(/^(?=.*\d)/, "숫자만 입력 가능합니다."),
   tags: yup.string(),
   // images: yup.string().required("상품 사진을 등록해주세요"),
 });

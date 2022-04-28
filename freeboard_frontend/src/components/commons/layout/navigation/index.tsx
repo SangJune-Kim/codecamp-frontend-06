@@ -48,9 +48,9 @@ export default function LayoutNavigation() {
     <Wrapper>
       <NavigationButton onClick={onClickMoveHome}>HOME </NavigationButton>
       <NavigationBar></NavigationBar>
-      <NavigationButton onClick={onClickMoveMarket}>중고마켓</NavigationButton>
-      <NavigationBar></NavigationBar>
       <NavigationButton onClick={onClickMoveBoards}>게시판</NavigationButton>
+      <NavigationBar></NavigationBar>
+      <NavigationButton onClick={onClickMoveMarket}>중고마켓</NavigationButton>
       <NavigationBar></NavigationBar>
       <NavigationButton onClick={onClickMoveFirebaseBoard}>
         파이어베이스 게시판

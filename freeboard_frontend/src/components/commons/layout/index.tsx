@@ -20,7 +20,7 @@ const HIDDEN_BANNER = [
   "/",
   "/login",
   "/register",
-  "/markets/",
+  "/markets",
   "/markets/new",
   "/markets/useditemId",
   "/boards",

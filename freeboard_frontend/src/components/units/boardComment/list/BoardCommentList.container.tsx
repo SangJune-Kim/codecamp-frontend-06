@@ -17,7 +17,7 @@ const BoardCommentList = () => {
   >(FETCH_BOARD_COMMENTS, {
     variables: { boardId: String(router.query.boardId) },
   });
-  console.log(data);
+  // console.log(data);
 
   return <BoardCommentListUI data={data} fetchMore={fetchMore} />;
 };

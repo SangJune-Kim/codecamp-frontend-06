@@ -1,22 +1,79 @@
 // market list presenter
+import InfiniteScroll from "react-infinite-scroller";
+import * as S from "./MarketList.styles";
 
 export default function MarketListUI(props) {
   return (
-    <div>
-      <div>베스트 상품 자리자리</div>
-      <div>
-        중간 자리자리
-        <div>판매중 상품</div>
-        <div>판매된 상품</div>
-        <div>검색 창</div>
-        <div>날짜 선택</div>
-        <div>검색 버튼</div>
-      </div>
-      <div>
-        상품들 자리자리
-        <div>맵돌릴 자리자리</div>
-      </div>
-      <button onClick={props.onClickNewItem}>상품 등록</button>
-    </div>
+    <S.Wrapper>
+      <S.MarketListWrapper>
+        <S.BestListWrapper>베스트 상품 자리자리</S.BestListWrapper>
+        <S.ListMenuWrapper>
+          <S.ChoiceShow>
+            <S.ShowSelling>판매중 상품</S.ShowSelling>
+            <S.ShowSoldout>판매된 상품</S.ShowSoldout>
+            <S.MoveToNewItem onClick={props.onClickNewItem}>
+              상품 등록
+            </S.MoveToNewItem>
+          </S.ChoiceShow>
+          <S.SearchWrapper>
+            <S.SearchBox>
+              <S.SearchImg src="/images/search.png" />
+              <S.SearchInput />
+            </S.SearchBox>
+            <S.SearchDate>날짜 선택</S.SearchDate>
+            <S.SearchButton>검색</S.SearchButton>
+          </S.SearchWrapper>
+        </S.ListMenuWrapper>
+        <div
+          style={{
+            width: "100%",
+            height: "800px",
+            overflow: "auto",
+            padding: "20px",
+          }}
+        >
+          <InfiniteScroll
+            pageStart={0}
+            loadMore={props.onLoadMore}
+            hasMore={true}
+            useWindow={false}
+          >
+            <S.ItemListWrapper>
+              {props.data?.fetchUseditems.map((el) => (
+                <S.ItemListRow key={el._id} onClick={{}}>
+                  <S.ItemInfo>
+                    <S.ItemPicture
+                      src={`https://storage.googleapis.com/${el.images[0]}`}
+                    />
+                    <S.ItemListDetail>
+                      <S.ItemListDetailName>{el.name}</S.ItemListDetailName>
+                      <S.ItemListDetailRemarks>
+                        {el.remarks}
+                      </S.ItemListDetailRemarks>
+                      <S.ItemListDetailTags>{el.tags}</S.ItemListDetailTags>
+                      <S.ItemListDetailBottom>
+                        <S.ItemListDetailSellerIcon src="/images/productListProfile.png" />
+                        <S.ItemListDetailSeller>
+                          {el.seller.name}
+                        </S.ItemListDetailSeller>
+                        <S.ItemListDetailPickedIcon src="/images/pick.png" />
+                        <S.ItemListDetailPickedCount>
+                          {el.pickedCount}
+                        </S.ItemListDetailPickedCount>
+                      </S.ItemListDetailBottom>
+                    </S.ItemListDetail>
+                  </S.ItemInfo>
+                  <S.ItemListPrice>
+                    <S.WonIcon src="/images/won.png" />
+                    {`${el.price}원`}
+                  </S.ItemListPrice>
+                </S.ItemListRow>
+              ))}
+            </S.ItemListWrapper>
+          </InfiniteScroll>
+        </div>
+      </S.MarketListWrapper>
+      <S.TodayListWrapper></S.TodayListWrapper>
+    </S.Wrapper>
   );
 }

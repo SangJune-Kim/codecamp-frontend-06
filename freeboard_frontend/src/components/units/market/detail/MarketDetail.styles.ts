@@ -9,9 +9,9 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  margin: 50px auto;
+  margin: 0px auto;
   padding: 50px 100px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); */
 `;
 
 // // page title부분
