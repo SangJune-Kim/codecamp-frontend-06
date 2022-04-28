@@ -2,6 +2,8 @@
 import { getDate } from "../../../../commons/libraries/utils";
 import MarketDetailSlider from "../../../commons/slider/marketDetail";
 import * as S from "./MarketDetail.styles";
+import Dompurify from "dompurify";
+import KakaoMap from "../../../commons/kakaoMap/Maptainer";
 
 export default function MarketDetailUI(props) {
   return (
@@ -44,13 +46,27 @@ export default function MarketDetailUI(props) {
         </S.ProductImage>
         {/* <MarketDetailSlider /> */}
         <S.ProductContents>
-          {props.data?.fetchUseditem.contents}
+          {/* {props.data?.fetchUseditem.contents} */}
+          {typeof window !== "undefined" && (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: Dompurify.sanitize(props.data?.fetchUseditem.contents),
+              }}
+            ></div>
+          )}
         </S.ProductContents>
-        <S.ProductTags>{props.data?.fetchUseditem.tags}</S.ProductTags>
+
+        <S.ProductTags>
+          {props.data?.fetchUseditem.tags.map((el, idx) => (
+            <span key={idx}>{el}</span>
+          ))}
+          {/* {props.data?.fetchUseditem.tags} */}
+        </S.ProductTags>
       </S.BodyWrapper>
       <S.MapWrapper>
-        mapWrapper
-        <S.ProductMap></S.ProductMap>
+        <KakaoMap
+          address={props.data?.fetchUseditem.useditemAddress.address || ""}
+        />
       </S.MapWrapper>
       <S.ButtonWrapper>
         <S.ListButton onClick={props.onClickMoveListPage}>

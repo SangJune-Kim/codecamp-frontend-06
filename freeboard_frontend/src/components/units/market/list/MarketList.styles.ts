@@ -48,6 +48,7 @@ export const MoveToNewItem = styled.button`
   border: 1px solid #bdbdbd;
   background-color: white;
   border-radius: 10px;
+  cursor: pointer;
 `;
 
 // 리스트 메뉴 검색
@@ -72,6 +73,7 @@ export const SearchBox = styled.div`
 
 export const SearchImg = styled.img`
   margin-left: 10px;
+  margin-right: 10px;
 `;
 
 export const SearchInput = styled.input`
@@ -79,7 +81,7 @@ export const SearchInput = styled.input`
   background-color: #f2f2f2;
   /* border-radius: 10px; */
   border: 0px;
-  width: 300px;
+  width: 370px;
   height: 30px;
 `;
 
@@ -89,6 +91,7 @@ export const SearchButton = styled.button`
   background-color: white;
   border-radius: 10px;
   height: 30px;
+  cursor: pointer;
 `;
 
 // 상품 리스트
@@ -130,6 +133,7 @@ export const ItemListDetailName = styled.div`
   font-size: 24px;
   font-weight: 500;
   /* margin-bottom: 5px; */
+  cursor: pointer;
 `;
 
 export const ItemListDetailRemarks = styled.div`

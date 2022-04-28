@@ -10,6 +10,7 @@ const HashTagPage = () => {
     }
   };
   // keyCode 구글링해봐
+  // const
 
   // 삭제할 때는 map으로 뿌렸으니까 각 인덱스를 메서드로 삭제하거나 하면 되겠지? 클릭으로?
   return (

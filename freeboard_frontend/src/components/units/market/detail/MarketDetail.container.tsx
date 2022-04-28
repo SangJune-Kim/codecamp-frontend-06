@@ -20,7 +20,7 @@ export default function MarketDetail() {
   const [toggleUseditemPick] = useMutation(USEDITEM_PICK);
 
   const onClickMoveEditPage = () => {
-    router.push(`/markets/${router.query.boardId}/edit`);
+    router.push(`/markets/${router.query.useditemId}/edit`);
   };
 
   const onClickMoveListPage = () => {
@@ -30,7 +30,7 @@ export default function MarketDetail() {
   const onClickDelete = async () => {
     try {
       await deleteUseditem({
-        variables: { useditemId: String(router.query.boardId) },
+        variables: { useditemId: String(router.query.useditemId) },
       });
       Modal.success({ content: "삭제가 완료되었습니다." });
       router.push("/markets");
@@ -54,7 +54,7 @@ export default function MarketDetail() {
       if (error instanceof Error) Modal.error({ content: error.message });
     }
   };
-
+  console.log(data);
   return (
     <MarketDetailUI
       data={data}

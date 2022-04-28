@@ -152,12 +152,6 @@ export const MapWrapper = styled.div`
   /* background-color: black; */
 `;
 
-export const ProductMap = styled.div`
-  width: 480px;
-  height: 250px;
-  background-color: black;
-`;
-
 // 버튼 부분
 export const ButtonWrapper = styled.div`
   display: flex;

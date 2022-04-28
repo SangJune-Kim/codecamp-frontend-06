@@ -2,6 +2,7 @@
 
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import { MouseEvent } from "react";
 import MarketListUI from "./MarketList.presenter";
 import { FETCH_USEDITEMS } from "./MarketList.queries";
 
@@ -11,6 +12,11 @@ export default function MarketList() {
 
   const onClickNewItem = () => {
     router.push("/markets/new");
+  };
+
+  const onClickMoveDetail = (event: MouseEvent<HTMLDivElement>) => {
+    if (event.target instanceof Element)
+      router.push(`/markets/${event.target?.id}`);
   };
 
   const onLoadMore = () => {
@@ -38,6 +44,7 @@ export default function MarketList() {
       onLoadMore={onLoadMore}
       data={data}
       onClickNewItem={onClickNewItem}
+      onClickMoveDetail={onClickMoveDetail}
     />
   );
 }

@@ -67,12 +67,6 @@ export const LocationMapWrapper = styled.div`
   margin-right: 30px;
 `;
 
-export const KakaoMapBox = styled.div`
-  background-color: black;
-  width: 350px;
-  height: 300px;
-`;
-
 // GPS && 상세주소 부분
 export const LocationDetailWrapper = styled.div`
   width: 100%;
@@ -85,14 +79,40 @@ export const LocationDetailWrapper = styled.div`
 export const LocationGPSBox = styled.div``;
 
 export const LocationGPSLatLng = styled.input`
-  width: 100px;
+  width: 135px;
   height: 40px;
+  font-size: 13px;
   border: 1px solid #bdbdbd;
   margin-right: 10px;
   text-align: center;
 `;
 
 // 상세주소 부분
+export const AddressSearchWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+export const AddressNumber = styled.input`
+  width: 60px;
+  height: 40px;
+  border: 1px solid #bdbdbd;
+  padding-left: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+`;
+export const AddressSearch = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  background-color: black;
+  border: 0px;
+  color: white;
+  font-size: 13px;
+  margin-bottom: 10px;
+  cursor: pointer;
+`;
 export const LocationDetailAddressBox = styled.div`
   width: 100%;
 `;
