@@ -1,0 +1,1 @@
+// market comment list types
