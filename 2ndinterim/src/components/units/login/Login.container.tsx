@@ -44,11 +44,11 @@ export default function LoginPage() {
       });
       const myAccessToken = result.data?.loginUser.accessToken;
       setAccessToken(myAccessToken);
-      localStorage.setItem("accessToken", myAccessToken);
       Modal.success({ content: "로그인에 성공했습니다." });
       router.push("/");
     } catch (error) {
-      if (error instanceof Error) Modal.error({ content: error.message });
+      if (error instanceof Error) console.log(error.message);
+      Modal.error({ content: error.message });
     }
   };
 

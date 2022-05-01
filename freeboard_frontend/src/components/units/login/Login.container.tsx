@@ -29,17 +29,15 @@ export default function LoginPage() {
   };
 
   const onClickLogIn = async () => {
-    console.log(loginChangeInputs);
     try {
       const result = await loginUser({
         variables: {
           ...loginChangeInputs,
         },
       });
-      console.log(result);
       const myAccessToken = result.data?.loginUser.accessToken;
       setAccessToken(myAccessToken);
-      localStorage.setItem("accessToken", myAccessToken);
+      // localStorage.setItem("ac", myAccessToken);
       Modal.success({ content: "로그인에 성공했습니다." });
       router.push("/home");
     } catch (error) {

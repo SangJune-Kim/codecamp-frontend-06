@@ -181,12 +181,8 @@ export const MapTitle = styled.div`
 export const MapWrapper = styled.div`
   width: 100%;
   height: auto;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   padding-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 
 // 상점&댓글 정보

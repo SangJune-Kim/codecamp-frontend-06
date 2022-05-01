@@ -9,11 +9,16 @@ export default function MarketDetailUI(props) {
     <S.Wrapper>
       <S.HeaderWrapper>
         <S.ProductImage>
-          <S.UploadImage
-            src={`https://storage.googleapis.com/${
-              props.data?.fetchUseditem.images.filter((el) => el !== "")[0]
-            }`}
-          />
+          {props.data?.fetchUseditem?.images?.filter((el) => el !== "")
+            .length === 0 ? (
+            <img src="/images/no-image.png" />
+          ) : (
+            <S.UploadImage
+              src={`https://storage.googleapis.com/${
+                props.data?.fetchUseditem.images.filter((el) => el !== "")[0]
+              }`}
+            />
+          )}
         </S.ProductImage>
         <S.ProductProfileWrapper>
           <S.ProductProfileDetail>
@@ -50,7 +55,7 @@ export default function MarketDetailUI(props) {
             >
               장바구니
             </S.ProductMoveToBasket>
-            <S.ProductBuy>바로구매</S.ProductBuy>
+            <S.ProductBuy onClick={props.onClickBuy}>바로구매</S.ProductBuy>
           </S.ProductButtonWrapper>
         </S.ProductProfileWrapper>
       </S.HeaderWrapper>
@@ -74,7 +79,9 @@ export default function MarketDetailUI(props) {
           </S.MapTitleBox>
           <S.MapWrapper>
             <KakaoMap
-              address={props.data?.fetchUseditem.useditemAddress.address || ""}
+              address={
+                props.data?.fetchUseditem?.useditemAddress?.address || ""
+              }
             />
           </S.MapWrapper>
         </S.ProductContentsMapWrapper>
@@ -82,7 +89,7 @@ export default function MarketDetailUI(props) {
           <S.CommonsTitle>상점 정보</S.CommonsTitle>
           <S.ProfileBox>
             <S.ProfileImg />
-            <S.Writer>{props.data?.fetchUseditem.seller.name}</S.Writer>
+            <S.Writer>{props.data?.fetchUseditem?.seller?.name}</S.Writer>
           </S.ProfileBox>
           <S.CommonsTitle>댓글 </S.CommonsTitle>
           <S.CommentWrapper>

@@ -1,9 +1,12 @@
 import { gql, useMutation, useQuery } from "@apollo/client";
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { accessTokenState } from "../../../../commons/store";
+import {
+  accessTokenState,
+  basketsLengthState,
+} from "../../../../commons/store";
 import { Modal } from "antd";
 import Head from "next/head";
 
@@ -73,7 +76,7 @@ export default function LayoutHeader() {
   const router = useRouter();
   const [amountPoint, setAmountPoint] = useState(100);
   const [isOpen, setIsOpen] = useState(false);
-  const [basketsLength, setBasketsLength] = useState(0);
+  const [basketsLength] = useRecoilState(basketsLengthState);
   const onClickMoveLogin = () => {
     router.push("/login/");
   };
@@ -86,7 +89,6 @@ export default function LayoutHeader() {
   );
 
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
-  console.log(data?.fetchUserLoggedIn.userPoint.amount);
   const onClickCharge = () => {
     setIsOpen((prev) => !prev);
   };
@@ -104,9 +106,9 @@ export default function LayoutHeader() {
   };
 
   const requestPay = () => {
+    setIsOpen(false);
     const IMP = window.IMP; // 생략 가능
-    IMP.init("imp96993675"); // Example: imp00000000
-    // IMP.request_pay(param, callback) 결제창 호출
+    IMP.init("imp49910675"); // Example: imp00000000
     IMP.request_pay(
       {
         // param
@@ -126,7 +128,6 @@ export default function LayoutHeader() {
           // 백엔드에 결제관련 데이터 넘겨주기(=뮤테이션 실행하기)
           createPointTransactionOfLoading({
             variables: { impUid: String(rsp.imp_uid) },
-            // refetchQueries,
           });
         } else {
           // 결제 실패 시 로직,
@@ -135,21 +136,14 @@ export default function LayoutHeader() {
       }
     );
   };
-  useEffect(() => {
-    setBasketsLength(
-      JSON.parse(localStorage.getItem("baskets") || "[]").length
-    );
-  }, [data]);
 
   return (
     <>
       <Head>
-        {/* <!-- jQuery --> */}
         <script
           type="text/javascript"
           src="https://code.jquery.com/jquery-1.12.4.min.js"
         ></script>
-        {/* <!-- iamport.payment.js --> */}
         <script
           type="text/javascript"
           src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
@@ -159,7 +153,7 @@ export default function LayoutHeader() {
         {accessToken ? (
           <Div>
             {data?.fetchUserLoggedIn.name}님
-            <span>포인트: {data?.fetchUserLoggedIn.userPoint.amount}</span>
+            <span>포인트: {data?.fetchUserLoggedIn?.userPoint?.amount}</span>
             <PointCharge onClick={onClickCharge}>충전</PointCharge>
           </Div>
         ) : (

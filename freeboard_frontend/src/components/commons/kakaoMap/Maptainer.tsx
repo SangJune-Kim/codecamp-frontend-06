@@ -41,7 +41,6 @@ export default function KakaoMap(props) {
               result[0].y,
               result[0].x
             );
-            console.log(coords);
             if (props.setGps) props.setGps(coords);
             // 결과값으로 받은 위치를 마커로 표시합니다
             const marker = new window.kakao.maps.Marker({

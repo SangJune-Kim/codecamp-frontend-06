@@ -35,6 +35,7 @@ export default function ApolloSetting(props) {
                 Authorization: `Bearer ${accessToken}`,
               },
             });
+            return forward(operation);
           });
         }
       }

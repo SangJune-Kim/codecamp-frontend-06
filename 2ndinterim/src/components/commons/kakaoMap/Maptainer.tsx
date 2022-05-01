@@ -1,8 +1,21 @@
+import styled from "@emotion/styled";
 import { useEffect } from "react";
 
 declare const window: typeof globalThis & {
   kakao: any;
 };
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin-left: 20px;
+`;
+
+const MapWrapper = styled.div`
+  width: 700px;
+  height: 500px;
+`;
 
 export default function KakaoMap(props) {
   const address = String(props.address);
@@ -75,10 +88,8 @@ export default function KakaoMap(props) {
   }, [address]);
 
   return (
-    <>
-      <div>
-        <div id="map" style={{ width: 700, height: 500 }}></div>
-      </div>
-    </>
+    <Wrapper>
+      <MapWrapper id="map"></MapWrapper>
+    </Wrapper>
   );
 }

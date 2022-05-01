@@ -26,9 +26,7 @@ export default function LoginPageUI(props) {
           <S.LoginErrorDiv>
             {props.formState.errors.password?.message}
           </S.LoginErrorDiv>
-          <S.LoginButton type="submit" onClick={props.onClickLogIn}>
-            로그인
-          </S.LoginButton>
+          <S.LoginButton type="submit">로그인</S.LoginButton>
         </S.LoginInputWrapper>
         <S.LoginBottomMenu>
           <S.LoginBottomComment> 아직 계정이 없으신가요?</S.LoginBottomComment>

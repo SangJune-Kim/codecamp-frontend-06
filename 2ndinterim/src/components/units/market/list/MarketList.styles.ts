@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const TestWrapper = styled.div`
+export const InfiniteScrollWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
