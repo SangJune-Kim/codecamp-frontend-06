@@ -34,6 +34,7 @@ export const CommentFetchHeader = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 10px;
 `;
 export const CommentWriter = styled.div`
   display: flex;

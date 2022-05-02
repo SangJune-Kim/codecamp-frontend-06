@@ -12,6 +12,7 @@ import {
   FETCH_USEDITEM_QUESTIONS,
   UPDATE_USEDITEM_QUESTION,
 } from "../list/MarketCommentList.queries";
+import { useEffect } from "react";
 
 const schema = yup.object({
   contents: yup
@@ -25,10 +26,12 @@ const MarketCommentWrite = (props) => {
   const [createUseditemQuestion] = useMutation(CREATE_USEDITEM_QUESTION);
   const [updateUseditemQuestion] = useMutation(UPDATE_USEDITEM_QUESTION);
 
-  const { register, handleSubmit, formState, watch, setValue } = useForm({
-    resolver: yupResolver(schema),
-    mode: "onChange",
-  });
+  const { register, handleSubmit, formState, watch, setValue, reset } = useForm(
+    {
+      resolver: yupResolver(schema),
+      mode: "onChange",
+    }
+  );
 
   const contentsLength = watch().contents?.length;
 
@@ -81,6 +84,12 @@ const MarketCommentWrite = (props) => {
       Modal.error({ content: "수정되지 않았습니다." });
     }
   };
+
+  useEffect(() => {
+    reset({
+      contents: props.data?.fetchUseditem.contents,
+    });
+  }, []);
 
   return (
     <MarketCommentWriteUI
