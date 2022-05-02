@@ -41,6 +41,7 @@ export const CommentWriter = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  word-break: break-all;
 `;
 
 export const CommentContents = styled.div`

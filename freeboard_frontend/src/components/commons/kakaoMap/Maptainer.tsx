@@ -5,7 +5,7 @@ declare const window: typeof globalThis & {
 };
 
 export default function KakaoMap(props) {
-  const address = String(props.address);
+  const address = String(props?.address);
   useEffect(() => {
     const script = document.createElement("script");
     script.src =

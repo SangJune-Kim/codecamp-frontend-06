@@ -5,8 +5,6 @@ import styled from "@emotion/styled";
 // 전체
 export const Wrapper = styled.div`
   width: 100%;
-
-  /* padding: 20px; */
   margin: 20px auto;
 `;
 
@@ -14,7 +12,7 @@ export const Wrapper = styled.div`
 
 export const MarketListWrapper = styled.div`
   width: 1200px;
-  margin: 30px auto;
+  margin-left: 30px;
   display: flex;
   flex-direction: column;
   overflow: auto;

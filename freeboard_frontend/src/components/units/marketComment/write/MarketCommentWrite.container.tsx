@@ -8,7 +8,11 @@ import { CREATE_USEDITEM_QUESTION } from "./MarketCommentWrite.queries";
 import * as yup from "yup";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
-import { FETCH_USEDITEM_QUESTIONS } from "../list/MarketCommentList.queries";
+import {
+  FETCH_USEDITEM_QUESTIONS,
+  UPDATE_USEDITEM_QUESTION,
+} from "../list/MarketCommentList.queries";
+import { useEffect } from "react";
 
 const schema = yup.object({
   contents: yup
@@ -17,13 +21,17 @@ const schema = yup.object({
     .required("내용을 입력해주세요"),
 });
 
-const MarketCommentWrite = () => {
+const MarketCommentWrite = (props) => {
   const router = useRouter();
   const [createUseditemQuestion] = useMutation(CREATE_USEDITEM_QUESTION);
-  const { register, handleSubmit, formState, watch, setValue } = useForm({
-    resolver: yupResolver(schema),
-    mode: "onChange",
-  });
+  const [updateUseditemQuestion] = useMutation(UPDATE_USEDITEM_QUESTION);
+
+  const { register, handleSubmit, formState, watch, setValue, reset } = useForm(
+    {
+      resolver: yupResolver(schema),
+      mode: "onChange",
+    }
+  );
 
   const contentsLength = watch().contents?.length;
 
@@ -50,6 +58,37 @@ const MarketCommentWrite = () => {
         Modal.error({ content: "댓글이 등록되지 않았습니다." });
     }
   };
+  // 수정하기
+  const onClickUpdateComment = async (data) => {
+    try {
+      if (!props.el?._id) return;
+      await updateUseditemQuestion({
+        variables: {
+          updateUseditemQuestionInput: {
+            contents: data.contents,
+          },
+          useditemQuestionId: String(props.el._id),
+        },
+        refetchQueries: [
+          {
+            query: FETCH_USEDITEM_QUESTIONS,
+            variables: { useditemId: String(router.query.useditemId) },
+          },
+        ],
+      });
+      Modal.success({ content: "댓글이 수정되었습니다." });
+      props.setIsEdit?.(false);
+    } catch (error) {
+      if (error instanceof Error) console.log(error.message);
+      Modal.error({ content: "수정되지 않았습니다." });
+    }
+  };
+  useEffect(() => {
+    reset({
+      contents: props.data?.fetchUseditem.contents,
+    });
+  }, []);
+
   return (
     <MarketCommentWriteUI
       register={register}
@@ -57,6 +96,10 @@ const MarketCommentWrite = () => {
       formState={formState}
       onClickComment={onClickComment}
       contentsLength={contentsLength}
+      // 수정
+      isEdit={props.isEdit}
+      onClickUpdateComment={onClickUpdateComment}
+      el={props.el}
     />
   );
 };

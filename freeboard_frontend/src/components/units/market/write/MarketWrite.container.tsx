@@ -134,7 +134,6 @@ export default function MarketNew(props) {
       remarks: props.data?.fetchUseditem.remarks,
       contents: props.data?.fetchUseditem.contents,
       price: props.data?.fetchUseditem.price,
-      // tags: props.data?.fetchUseditem.tags,
     });
   }, [props.data]);
 

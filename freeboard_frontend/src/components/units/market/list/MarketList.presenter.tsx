@@ -1,5 +1,6 @@
 // market list presenter
 import InfiniteScroll from "react-infinite-scroller";
+import MarketToday from "../today/MarketToday.container";
 import * as S from "./MarketList.styles";
 
 export default function MarketListUI(props) {
@@ -40,7 +41,7 @@ export default function MarketListUI(props) {
           >
             <S.ItemListWrapper>
               {props.data?.fetchUseditems.map((el) => (
-                <S.ItemListRow key={el._id}>
+                <S.ItemListRow key={el._id} id={el._id}>
                   <S.ItemInfo>
                     <S.ItemPicture
                       src={`https://storage.googleapis.com/${el.images[0]}`}
@@ -48,7 +49,7 @@ export default function MarketListUI(props) {
                     <S.ItemListDetail>
                       <S.ItemListDetailName
                         id={el._id}
-                        onClick={props.onClickMoveDetail}
+                        onClick={props.onClickMoveDetail(el)}
                       >
                         {el.name}
                       </S.ItemListDetailName>
@@ -79,6 +80,7 @@ export default function MarketListUI(props) {
         </div>
       </S.MarketListWrapper>
       <S.TodayListWrapper></S.TodayListWrapper>
+      <MarketToday todaysSession={props.todaysSession} />
     </S.Wrapper>
   );
 }

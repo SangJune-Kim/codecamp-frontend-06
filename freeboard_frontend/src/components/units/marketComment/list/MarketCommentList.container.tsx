@@ -18,7 +18,7 @@ const MarketCommentList = () => {
   >(FETCH_USEDITEM_QUESTIONS, {
     variables: { useditemId: String(router.query.useditemId) },
   });
-  // console.log(data);
+
   return <MarketCommentListUI data={data} fetchMore={fetchMore} />;
 };
 export default MarketCommentList;

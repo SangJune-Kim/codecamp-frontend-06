@@ -8,7 +8,12 @@ const MarketCommentListUI = (props) => {
       {props.data?.fetchUseditemQuestions.map(
         (el: any) =>
           (
-            <MarketCommentListItemUI key={el._id} el={el} data={props.data} />
+            <MarketCommentListItemUI
+              key={el._id}
+              el={el}
+              id={el._id}
+              data={props.data}
+            />
           ) || <div></div>
       )}
     </S.Wrapper>

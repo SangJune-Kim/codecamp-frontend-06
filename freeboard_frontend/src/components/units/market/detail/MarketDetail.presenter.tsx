@@ -1,6 +1,6 @@
 // 마켓 상세페이지 프레젠터
 import { getDate } from "../../../../commons/libraries/utils";
-import MarketDetailSlider from "../../../commons/slider/marketDetail";
+// import MarketDetailSlider from "../../../commons/slider/marketDetail";
 import * as S from "./MarketDetail.styles";
 import Dompurify from "dompurify";
 import KakaoMap from "../../../commons/kakaoMap/Maptainer";
@@ -50,7 +50,7 @@ export default function MarketDetailUI(props) {
           {typeof window !== "undefined" && (
             <div
               dangerouslySetInnerHTML={{
-                __html: Dompurify.sanitize(props.data?.fetchUseditem.contents),
+                __html: Dompurify.sanitize(props.data?.fetchUseditem?.contents),
               }}
             ></div>
           )}
@@ -58,14 +58,14 @@ export default function MarketDetailUI(props) {
 
         <S.ProductTags>
           {props.data?.fetchUseditem.tags.map((el, idx) => (
-            <span key={idx}>{el}</span>
+            <S.HashTagSpan key={idx}>{el}</S.HashTagSpan>
           ))}
           {/* {props.data?.fetchUseditem.tags} */}
         </S.ProductTags>
       </S.BodyWrapper>
       <S.MapWrapper>
         <KakaoMap
-          address={props.data?.fetchUseditem.useditemAddress.address || ""}
+          address={props.data?.fetchUseditem?.useditemAddress?.address || ""}
         />
       </S.MapWrapper>
       <S.ButtonWrapper>

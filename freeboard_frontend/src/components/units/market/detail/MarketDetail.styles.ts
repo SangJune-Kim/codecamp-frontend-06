@@ -120,10 +120,18 @@ export const ProductContents = styled.div`
 `;
 export const ProductTags = styled.div`
   width: 100%;
-  color: #bdbdbd;
   font-size: 15px;
   font-weight: 500;
   line-height: 25px;
+`;
+
+export const HashTagSpan = styled.span`
+  background-color: #fee004;
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
 `;
 
 // 이미지 부분

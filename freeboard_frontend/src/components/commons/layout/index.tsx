@@ -22,7 +22,7 @@ const HIDDEN_BANNER = [
   "/register",
   "/markets",
   "/markets/new",
-  "/markets/useditemId",
+  "/markets/[useditemId]",
   "/boards",
   "/firebaseBoards",
 ];
@@ -31,9 +31,8 @@ const HIDDEN_NAVIGATION = ["/", "/login", "/register"];
 const Layout = (props: ILayoutProps) => {
   const router = useRouter();
   const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
-  const isHiddenBanner = HIDDEN_BANNER.includes(router.asPath);
+  const isHiddenBanner = HIDDEN_BANNER.includes(router.pathname);
   const isHiddenNavigation = HIDDEN_NAVIGATION.includes(router.asPath);
-
   return (
     <div>
       {!isHiddenHeader && <LayoutHeader></LayoutHeader>}
