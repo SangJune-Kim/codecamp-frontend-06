@@ -1,8 +1,12 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { getDate } from "../../../../commons/libraries/utils";
+import { FETCH_USER_LOGGED_IN } from "../../../commons/payment/Payment.queries";
+import { FETCH_USEDITEM } from "../../market/detail/MarketDetail.queries";
+import MarketCommentAnswer from "../answer/MarketAnswer.container";
+import AnswerList from "../answerList/MarketAnswerList.container";
 import MarketCommentWrite from "../write/MarketCommentWrite.container";
 import {
   DELETE_USEDITEM_QUESTION,
@@ -14,6 +18,13 @@ const MarketCommentListItemUI = (props) => {
   const router = useRouter();
   const [deleteUseditemQuestion] = useMutation(DELETE_USEDITEM_QUESTION);
   const [isEdit, setIsEdit] = useState(false);
+  const [isAnswer, setIsAnswer] = useState(false);
+
+  const { data: loginData } = useQuery(FETCH_USER_LOGGED_IN);
+
+  const { data: useditemData } = useQuery(FETCH_USEDITEM, {
+    variables: { useditemId: router.query.useditemId },
+  });
 
   const onClickDeleteComment = async (event) => {
     try {
@@ -36,6 +47,10 @@ const MarketCommentListItemUI = (props) => {
     setIsEdit((prev) => !prev);
   };
 
+  const onClickAnswer = () => {
+    setIsAnswer((prev) => !prev);
+  };
+
   return (
     <>
       {!isEdit && (
@@ -45,6 +60,10 @@ const MarketCommentListItemUI = (props) => {
             <S.CommentFetchHeader>
               <S.CommentWriter>{props.el?.user.name}</S.CommentWriter>
               <div>
+                {useditemData?.fetchUseditem.seller._id ===
+                  loginData?.fetchUserLoggedIn._id && (
+                  <button onClick={onClickAnswer}>답변하기</button>
+                )}
                 <S.UpdateIconButton onClick={onClickUpdateComment}>
                   <S.UpdateIcon src="/images/update.png" />
                 </S.UpdateIconButton>
@@ -56,7 +75,6 @@ const MarketCommentListItemUI = (props) => {
                 </S.DeleteIconButton>
               </div>
             </S.CommentFetchHeader>
-
             <S.CommentContents>{props.el?.contents}</S.CommentContents>
             <S.CommentCreatedAt>
               {getDate(props.el?.createdAt)}
@@ -67,6 +85,10 @@ const MarketCommentListItemUI = (props) => {
       {isEdit && (
         <MarketCommentWrite isEdit={true} setIsEdit={setIsEdit} el={props.el} />
       )}
+      {isAnswer && (
+        <MarketCommentAnswer setIsAnswer={setIsAnswer} id={props.id} />
+      )}
+      <AnswerList id={props.id} />
     </>
   );
 };

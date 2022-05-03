@@ -69,12 +69,12 @@ export default function MarketNewUI(props) {
         </S.CommonsInputWrapper>
         <S.CommonsInputWrapper>
           <S.CommonsInputTitle>태그 입력</S.CommonsInputTitle>
-          <div>
+          <S.ProductTags>
             {props.data?.fetchUseditem.tags || ""}
             {props.hashArr.map((el, idx) => (
-              <span key={idx}>{el}</span>
+              <S.HashTagSpan key={idx}>{el}</S.HashTagSpan>
             ))}
-          </div>
+          </S.ProductTags>
           <S.CommonsInput
             type="text"
             placeholder="태그를 입력하고 스페이스바를 누르세요"

@@ -52,8 +52,25 @@ export const CommonsError = styled.div`
   width: 100%;
 `;
 
-// location part
+// 해시태그
+export const ProductTags = styled.div`
+  width: 100%;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  margin-bottom: 5px;
+`;
 
+export const HashTagSpan = styled.span`
+  background-color: #fee004;
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+`;
+
+// 지도 전체
 export const LocationWrapper = styled.div`
   display: flex;
   flex-direction: row;

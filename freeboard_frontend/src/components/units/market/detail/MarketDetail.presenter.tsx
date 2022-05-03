@@ -60,7 +60,6 @@ export default function MarketDetailUI(props) {
           {props.data?.fetchUseditem.tags.map((el, idx) => (
             <S.HashTagSpan key={idx}>{el}</S.HashTagSpan>
           ))}
-          {/* {props.data?.fetchUseditem.tags} */}
         </S.ProductTags>
       </S.BodyWrapper>
       <S.MapWrapper>
@@ -69,13 +68,21 @@ export default function MarketDetailUI(props) {
         />
       </S.MapWrapper>
       <S.ButtonWrapper>
-        <S.ListButton onClick={props.onClickMoveListPage}>
+        <S.CommonsButton onClick={props.onClickMoveListPage}>
           목록으로
-        </S.ListButton>
-        <S.EditButton onClick={props.onClickMoveEditPage}>
+        </S.CommonsButton>
+        <S.CommonsButton
+          onClick={props.onClickBasket(props.data?.fetchUseditem)}
+        >
+          장바구니 넣기
+        </S.CommonsButton>
+        <S.CommonsButton onClick={props.onClickBuy}>구매하기</S.CommonsButton>
+        <S.CommonsButton onClick={props.onClickDelete}>
+          삭제하기
+        </S.CommonsButton>
+        <S.CommonsButton onClick={props.onClickMoveEditPage}>
           수정하기
-        </S.EditButton>
-        <S.DeleteButton onClick={props.onClickDelete}>삭제하기</S.DeleteButton>
+        </S.CommonsButton>
       </S.ButtonWrapper>
     </S.Wrapper>
   );

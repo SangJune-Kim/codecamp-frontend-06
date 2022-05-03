@@ -170,27 +170,11 @@ export const ButtonWrapper = styled.div`
   margin-bottom: 30px;
 `;
 
-export const ListButton = styled.button`
+export const CommonsButton = styled.button`
   border: 1px solid #bdbdbd;
   background-color: #ffffff;
-  width: 179px;
+  width: 150px;
   height: 45px;
   margin-right: 20px;
-  cursor: pointer;
-`;
-
-export const EditButton = styled.button`
-  border: 1px solid #bdbdbd;
-  background-color: #ffffff;
-  width: 179px;
-  height: 45px;
-  margin-right: 20px;
-  cursor: pointer;
-`;
-export const DeleteButton = styled.button`
-  border: 1px solid #bdbdbd;
-  background-color: #ffffff;
-  width: 179px;
-  height: 45px;
   cursor: pointer;
 `;

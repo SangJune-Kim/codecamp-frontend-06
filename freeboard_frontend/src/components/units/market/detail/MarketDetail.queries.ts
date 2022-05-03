@@ -20,6 +20,7 @@ export const FETCH_USEDITEM = gql`
         lng
       }
       seller {
+        _id
         name
         picture
       }
@@ -35,5 +36,12 @@ export const DELETE_USEDITEM = gql`
 export const USEDITEM_PICK = gql`
   mutation toggleUseditemPick($useditemId: ID!) {
     toggleUseditemPick(useditemId: $useditemId)
+  }
+`;
+export const CPTOBS = gql`
+  mutation createPointTransactionOfBuyingAndSelling($useritemId: ID!) {
+    createPointTransactionOfBuyingAndSelling(useritemId: $useritemId) {
+      _id
+    }
   }
 `;

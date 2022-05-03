@@ -1,32 +1,12 @@
-// market Comment write styles
-
 import styled from "@emotion/styled";
 
 // 전체
 export const Wrapper = styled.div`
-  width: 1200px;
+  width: 1100px;
   display: flex;
   flex-direction: column;
   margin: 30px auto;
   padding: 0px 100px;
-`;
-
-// 헤더 부분
-export const CommentHeaderWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 30px;
-  font-size: 18px;
-  font-weight: 500;
-`;
-export const CommentIcon = styled.img`
-  margin-right: 10px;
-`;
-
-export const CommentTitle = styled.div`
-  margin-bottom: 20px;
 `;
 
 // 인풋
@@ -38,6 +18,17 @@ export const CommentWriterInput = styled.textarea`
   padding-top: 10px;
   padding-left: 10px;
   margin-bottom: 5px;
+`;
+
+// 수정 삭제 버튼
+export const UpdateIcon = styled.img`
+  cursor: pointer;
+  margin-left: 10px;
+`;
+
+export const DeleteIcon = styled.img`
+  cursor: pointer;
+  margin-left: 10px;
 `;
 
 // 등록 부분
@@ -65,7 +56,6 @@ export const CommentCount = styled.div`
   margin-right: 10px;
   padding-left: 5px;
 `;
-
 // 에러
 export const CommentError = styled.div`
   color: red;
