@@ -83,7 +83,7 @@ const MarketDetail = () => {
       await createPointTransactionOfBuyingAndSelling({
         variables: { useritemId: String(router.query.useditemId) },
       });
-      Modal.success({ content: "상품 구매 완" });
+      Modal.success({ content: "상품 구매 완료" });
       router.push("/");
     } catch (error) {
       if (error instanceof Error) Modal.error({ content: error.message });
