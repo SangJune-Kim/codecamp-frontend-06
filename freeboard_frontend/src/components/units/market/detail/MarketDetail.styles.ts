@@ -1,4 +1,3 @@
-import Icon, { HeartFilled, HeartOutlined } from "@ant-design/icons";
 import styled from "@emotion/styled";
 
 // 전체
