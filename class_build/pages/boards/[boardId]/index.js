@@ -45,7 +45,7 @@ export const getSeverSideProps = async (context) => {
       myBoardData: {
         title: result.fetchBoard.title,
         contents: result.fetchBoard.contents,
-        images: result.fetchBOard.images,
+        images: result.fetchBoard.images,
       },
     },
   };
