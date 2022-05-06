@@ -7,7 +7,11 @@ interface IFormValues {
 }
 
 export default function ReactHookFormPage() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm();
 
   const onClickSubmit = (data: IFormValues) => {
     console.log(data);

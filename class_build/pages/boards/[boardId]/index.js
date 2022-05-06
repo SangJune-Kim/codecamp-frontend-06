@@ -42,10 +42,12 @@ export const getSeverSideProps = async (context) => {
 
   return {
     props: {
-      myBoardData: {
-        title: result.fetchBoard.title,
-        contents: result.fetchBoard.contents,
-        images: result.fetchBoard.images,
+      data: {
+        myBoardData: {
+          title: result.fetchBoard.title,
+          contents: result.fetchBoard.contents,
+          images: result.fetchBoard.images,
+        },
       },
     },
   };

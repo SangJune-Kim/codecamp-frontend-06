@@ -44,7 +44,14 @@ export default function MarketListUI(props) {
                 <S.ItemListRow key={el._id} id={el._id}>
                   <S.ItemInfo>
                     <S.ItemPicture
-                      src={`https://storage.googleapis.com/${el.images[0]}`}
+                      src={
+                        el.images.filter((e) => e !== "").length === 0
+                          ? "/images/no-image.png"
+                          : `https://storage.googleapis.com/${
+                              el.images.filter((e) => e !== "")[0]
+                            }`
+                      }
+                      // src={`https://storage.googleapis.com/${el.images[0]}`}
                     />
                     <S.ItemListDetail>
                       <S.ItemListDetailName
