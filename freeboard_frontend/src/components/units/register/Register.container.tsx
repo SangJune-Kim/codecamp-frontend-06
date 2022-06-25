@@ -91,6 +91,7 @@ export default function Register() {
   const onClickMoveLogin = () => {
     router.push("/login");
   };
+
   return (
     <RegisterUI
       // onChangeInput={onChangeInput}

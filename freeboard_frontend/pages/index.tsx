@@ -20,10 +20,10 @@ export default function Home() {
   const onClickMoveHome = () => {
     router.push("/home/");
   };
+
   return (
     <Wrapper>
       <button onClick={onClickMoveHome}>홈으로</button>
-      <div>랜딩 페이지</div>
       <div>랜딩 페이지</div>
       <div>랜딩 페이지</div>
       <div>랜딩 페이지</div>
