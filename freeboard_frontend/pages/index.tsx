@@ -8,10 +8,6 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  /* background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom center;
-  background-image: url("/images/surfing.webp"); */
   background-color: rgba(40 70 83);
 `;
 
