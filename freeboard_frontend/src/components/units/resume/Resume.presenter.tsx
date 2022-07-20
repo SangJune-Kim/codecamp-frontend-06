@@ -5,7 +5,7 @@ const ResumeUI = (props) => {
   return (
     <R.Container>
       <R.Wrapper>
-        <R.ProfilePicture>Profile Image</R.ProfilePicture>
+        <R.ProfilePicture />
         <h1>김상준</h1>
         <R.NameUnderLine />
         <h3>FRONTEND DEVELOPER</h3>

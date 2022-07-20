@@ -31,13 +31,13 @@ export const Wrapper = styled.div`
 `;
 
 export const ProfilePicture = styled.div`
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  background-color: #d9d9d9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-image: url("/resume/profile.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin-bottom: 30px;
 `;
 
