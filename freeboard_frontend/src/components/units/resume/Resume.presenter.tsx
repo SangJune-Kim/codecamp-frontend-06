@@ -10,9 +10,9 @@ const ResumeUI = (props) => {
         <R.NameUnderLine />
         <h3>FRONTEND DEVELOPER</h3>
         <p>
-          sdfffffff
+          새로운 배움을 즐기는
           <br />
-          asdfsf124124124
+          프론트엔드 개발자입니다
         </p>
         <R.MenuWrapper>
           <span>resume</span>
