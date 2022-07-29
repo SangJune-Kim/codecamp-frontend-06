@@ -1,5 +1,5 @@
 import Link from "next/link";
-import * as R from "./Resume.styles";
+import * as R from "./Sidebar.styles";
 
 const ResumeUI = (props) => {
   return (

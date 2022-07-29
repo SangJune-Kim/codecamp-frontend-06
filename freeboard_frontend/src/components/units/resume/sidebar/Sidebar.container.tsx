@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import ResumeUI from "./Resume.presenter";
+import ResumeUI from "./Sidebar.presenter";
 
 const Resume = () => {
   const router = useRouter();
