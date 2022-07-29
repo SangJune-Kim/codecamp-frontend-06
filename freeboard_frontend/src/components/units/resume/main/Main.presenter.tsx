@@ -1,10 +1,10 @@
-import * as M from "./Main.styles";
+import * as R from "./Main.styles";
 
 const MainUI = () => {
   return (
-    <M.Container>
+    <R.Container>
       <div></div>
-    </M.Container>
+    </R.Container>
   );
 };
 export default MainUI;

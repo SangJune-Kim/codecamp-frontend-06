@@ -1,4 +1,4 @@
-import Resume from "../src/components/units/resume/sidebar/Sidebar.container";
+import Resume from "../src/components/units/resume";
 
 export default function Home() {
   return <Resume />;

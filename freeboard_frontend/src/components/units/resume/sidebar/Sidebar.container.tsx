@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
-import ResumeUI from "./Sidebar.presenter";
+import SidebarUI from "./Sidebar.presenter";
 
-const Resume = () => {
+const Sidebar = () => {
   const router = useRouter();
 
   const onClickMoveHome = () => {
@@ -14,11 +14,11 @@ const Resume = () => {
   };
   return (
     <>
-      <ResumeUI
+      <SidebarUI
         onClickMoveHome={onClickMoveHome}
         onClickCopyEmail={onClickCopyEmail}
       />
     </>
   );
 };
-export default Resume;
+export default Sidebar;

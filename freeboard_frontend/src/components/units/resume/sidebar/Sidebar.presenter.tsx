@@ -1,7 +1,7 @@
 import Link from "next/link";
 import * as R from "./Sidebar.styles";
 
-const ResumeUI = (props) => {
+const SidebarUI = (props) => {
   return (
     <R.Container>
       <R.Wrapper>
@@ -31,4 +31,4 @@ const ResumeUI = (props) => {
     </R.Container>
   );
 };
-export default ResumeUI;
+export default SidebarUI;
