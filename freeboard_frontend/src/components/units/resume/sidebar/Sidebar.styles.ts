@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   > h1 {
     font-size: 50px;
@@ -80,4 +81,12 @@ export const SNSWrapper = styled.div`
     height: 40px;
     cursor: pointer;
   }
+`;
+
+// 배경
+export const BackImage = styled.img`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
 `;
