@@ -4,9 +4,9 @@ import * as R from "./Sidebar.styles";
 const SidebarUI = (props) => {
   return (
     <R.Container>
-      <R.BackImage src="/resume/me.jpeg" />
+      <R.BackImage />
       <R.Wrapper>
-        <R.ProfilePicture />
+        {/* <R.ProfilePicture /> */}
         <h1>김상준</h1>
         <R.NameUnderLine />
         <h3>FRONTEND DEVELOPER</h3>

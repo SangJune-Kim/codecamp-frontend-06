@@ -84,9 +84,12 @@ export const SNSWrapper = styled.div`
 `;
 
 // 배경
-export const BackImage = styled.img`
+export const BackImage = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: -1;
+  background-image: url("/resume/beach.jpeg");
+  background-repeat: none;
+  background-position: center;
 `;
