@@ -43,8 +43,8 @@ export const ProfilePicture = styled.div`
 `;
 
 export const NameUnderLine = styled.div`
-  width: 255px;
-  border-top: 6px solid rgb(226, 215, 211);
+  width: 100px;
+  border-top: 3px solid rgb(226, 215, 211);
   margin-bottom: 10px;
 `;
 
@@ -56,8 +56,8 @@ export const MenuWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px 0 20px 0;
-  border-top: 3px solid rgb(226, 215, 211);
-  border-bottom: 3px solid rgb(226, 215, 211);
+  border-top: 2px solid rgb(226, 215, 211);
+  border-bottom: 2px solid rgb(226, 215, 211);
   margin-bottom: 30px;
   & span {
     font-size: 25px;
