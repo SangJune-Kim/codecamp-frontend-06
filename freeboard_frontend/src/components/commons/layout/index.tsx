@@ -18,6 +18,7 @@ interface ILayoutProps {
 const HIDDEN_HEADER = ["/"];
 const HIDDEN_BANNER = [
   "/",
+  "/home",
   "/login",
   "/register",
   "/markets",
