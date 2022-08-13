@@ -6,7 +6,7 @@ const SidebarUI = (props) => {
     <R.Container>
       <R.BackImage />
       <R.Wrapper>
-        {/* <R.ProfilePicture /> */}
+        <R.ProfilePicture />
         <h1>김상준</h1>
         <R.NameUnderLine />
         <h3>FRONTEND DEVELOPER</h3>
