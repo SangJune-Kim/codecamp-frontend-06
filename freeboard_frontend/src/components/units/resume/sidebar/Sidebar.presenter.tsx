@@ -19,7 +19,7 @@ const SidebarUI = (props) => {
           <span>resume</span>
           <span>portfolio</span>
         </R.MenuWrapper>
-        {/* <R.SNSWrapper>
+        <R.SNSWrapper>
           <Link href={"https://github.com/SangJune-Kim"}>
             <img src="/resume/github.png" />
           </Link>
@@ -27,7 +27,7 @@ const SidebarUI = (props) => {
             <img src="/resume/tistory.png" />
           </Link>
           <img src="/resume/mail.png" onClick={props.onClickCopyEmail} />
-        </R.SNSWrapper> */}
+        </R.SNSWrapper>
       </R.Wrapper>
     </R.Container>
   );
