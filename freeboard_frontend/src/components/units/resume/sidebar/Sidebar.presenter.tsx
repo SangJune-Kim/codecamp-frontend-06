@@ -19,6 +19,12 @@ const SidebarUI = (props) => {
           <span>resume</span>
           <span>portfolio</span>
         </R.MenuWrapper>
+        <div>
+          Contact
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+        </div>
         {/* <R.SNSWrapper>
           <Link href={"https://github.com/SangJune-Kim"}>
             <img src="/resume/github.png" />
