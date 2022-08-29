@@ -79,21 +79,10 @@ export const SNSWrapper = styled.div`
   width: 80%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
   & > img {
     width: 40px;
     height: 40px;
     cursor: pointer;
   }
-`;
-
-// 배경
-export const BackImage = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-  /* background-image: url("/resume/beach.jpeg");
-  background-repeat: none;
-  background-position: center; */
 `;

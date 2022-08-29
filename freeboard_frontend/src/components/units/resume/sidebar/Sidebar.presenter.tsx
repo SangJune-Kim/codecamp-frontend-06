@@ -4,7 +4,6 @@ import * as R from "./Sidebar.styles";
 const SidebarUI = (props) => {
   return (
     <R.Container>
-      <R.BackImage />
       <R.Wrapper>
         <R.ProfilePicture />
         <h1>김상준</h1>
@@ -19,12 +18,7 @@ const SidebarUI = (props) => {
           <span>resume</span>
           <span>portfolio</span>
         </R.MenuWrapper>
-        <div>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-        </div>
-        {/* <R.SNSWrapper>
+        <R.SNSWrapper>
           <Link href={"https://github.com/SangJune-Kim"}>
             <img src="/resume/github.png" />
           </Link>
@@ -32,7 +26,7 @@ const SidebarUI = (props) => {
             <img src="/resume/tistory.png" />
           </Link>
           <img src="/resume/mail.png" onClick={props.onClickCopyEmail} />
-        </R.SNSWrapper> */}
+        </R.SNSWrapper>
       </R.Wrapper>
     </R.Container>
   );
