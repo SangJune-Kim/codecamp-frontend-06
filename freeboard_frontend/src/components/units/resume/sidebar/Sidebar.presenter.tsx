@@ -20,7 +20,6 @@ const SidebarUI = (props) => {
           <span>portfolio</span>
         </R.MenuWrapper>
         <div>
-          Contact
           <button>1</button>
           <button>2</button>
           <button>3</button>

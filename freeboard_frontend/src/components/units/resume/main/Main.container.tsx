@@ -1,7 +1,9 @@
+import MainUI from "./Main.presenter";
+
 const Main = () => {
   return (
     <>
-      <div></div>
+      <MainUI />
     </>
   );
 };

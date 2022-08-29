@@ -3,7 +3,7 @@ import * as R from "./Main.styles";
 const MainUI = () => {
   return (
     <R.Container>
-      <div></div>
+      <div>asdfasf</div>
     </R.Container>
   );
 };

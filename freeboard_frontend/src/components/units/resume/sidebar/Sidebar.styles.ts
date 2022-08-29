@@ -1,12 +1,14 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 470px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #010322;
+  color: white;
 `;
 
 export const Wrapper = styled.div`
@@ -19,11 +21,13 @@ export const Wrapper = styled.div`
     font-size: 50px;
     font-weight: 900;
     margin: 0;
+    color: white;
   }
   > h3 {
     font-size: 20px;
     margin-bottom: 30px;
     font-weight: 700;
+    color: white;
   }
   > p {
     font-size: 20px;
@@ -43,7 +47,7 @@ export const ProfilePicture = styled.div`
 `;
 
 export const NameUnderLine = styled.div`
-  width: 100px;
+  width: 140px;
   border-top: 3px solid rgb(226, 215, 211);
   margin-bottom: 10px;
 `;
@@ -89,7 +93,7 @@ export const BackImage = styled.div`
   height: 100%;
   position: absolute;
   z-index: -1;
-  background-image: url("/resume/beach.jpeg");
+  /* background-image: url("/resume/beach.jpeg");
   background-repeat: none;
-  background-position: center;
+  background-position: center; */
 `;
