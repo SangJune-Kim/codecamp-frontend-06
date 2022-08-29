@@ -15,16 +15,22 @@ const MainUI = () => {
             프로젝트를 하며 익혔던 기술들을 다듬고 공부하고 있습니다.
           </p>
           <p>
-            - 백앤드 개발자, 디자이너와 협업하는 프로젝트를 수행한 경험이
+            • 백앤드 개발자, 디자이너와 협업하는 프로젝트를 수행한 경험이
             있습니다.
             <br />
-            - React, Next.js, Typescript, Emotion, Apollo-Client, Graphql을
+            • React, Next.js, Typescript, Emotion, Apollo-Client, Graphql을
             활용해 웹 프로젝트 개발 경험이 있습니다.
-            <br />- 12주 과정의 부트캠프를 수료한 후 꾸준히 팀 프로젝트 리팩토링
+            <br />• 12주 과정의 부트캠프를 수료한 후 꾸준히 팀 프로젝트 리팩토링
             및 개발 지식에 대한 스터디를 진행하고 있습니다.
           </p>
         </R.Introduce>
-        <R.Profile>Contact</R.Profile>
+        <R.Profile>
+          Contact
+          <span>• Phone : 010-2250-1806</span>
+          <span>• Email : ghfnsgldl@gmail.com</span>
+          <span>• Github : https://github.com/SangJune-Kim</span>
+          <span>• Blog : https://walkingkim.tistory.com/ </span>
+        </R.Profile>
       </R.Wrapper>
     </R.Container>
   );
