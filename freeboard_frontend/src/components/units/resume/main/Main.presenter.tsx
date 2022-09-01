@@ -31,6 +31,7 @@ const MainUI = () => {
           <span>• Github : https://github.com/SangJune-Kim</span>
           <span>• Blog : https://walkingkim.tistory.com/ </span>
         </R.Profile>
+        <R.About>asdf</R.About>
       </R.Wrapper>
     </R.Container>
   );

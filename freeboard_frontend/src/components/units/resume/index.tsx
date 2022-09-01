@@ -6,6 +6,7 @@ const Container = styled.div`
   width: 1920px;
   height: 1080px;
   display: flex;
+  font-size: 15px;
 `;
 
 const Resume = () => {
