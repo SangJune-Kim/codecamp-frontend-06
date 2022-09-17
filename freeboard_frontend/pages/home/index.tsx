@@ -10,5 +10,5 @@ const Container = styled.div`
 `;
 
 export default function HomePage() {
-  return <Container></Container>;
+  return <Container>ㅁㄴㅇㅇ</Container>;
 }
