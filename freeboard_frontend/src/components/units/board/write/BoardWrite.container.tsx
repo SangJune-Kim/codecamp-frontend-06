@@ -207,4 +207,4 @@ const BoardWrite = (props: IBoardWriteProps) => {
     />
   );
 };
-export default withAuth(BoardWrite);
+export default BoardWrite;
