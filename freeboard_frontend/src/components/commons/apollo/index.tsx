@@ -16,8 +16,6 @@ export default function ApolloSetting(props) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
 
   useEffect(() => {
-    // setAccessToken(localStorage.getItem("accessToken") || "");
-    // accessToken을 refreshToken으로 재발급 받아서 state에 넣어줘
     getAccessToken().then((newAccessToken) => {
       setAccessToken(newAccessToken);
     });

@@ -8,14 +8,13 @@ import LayoutFooter from "./footer";
 
 const Body = styled.div`
   width: 100%;
-  /* padding-bottom: 20px; */
 `;
 
 interface ILayoutProps {
   children: ReactNode;
 }
 
-const HIDDEN_HEADER = ["/"];
+const HIDDEN_HEADER = [""];
 const HIDDEN_BANNER = [
   "/",
   "/home",
@@ -27,8 +26,8 @@ const HIDDEN_BANNER = [
   "/boards",
   "/firebaseBoards",
 ];
-const HIDDEN_NAVIGATION = ["/", "/login", "/register"];
-const HIDDEN_FOOTER = ["/"];
+const HIDDEN_NAVIGATION = ["/login", "/register"];
+const HIDDEN_FOOTER = ["/login"];
 
 const Layout = (props: ILayoutProps) => {
   const router = useRouter();

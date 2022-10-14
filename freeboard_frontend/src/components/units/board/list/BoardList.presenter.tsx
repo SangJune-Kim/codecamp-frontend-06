@@ -8,9 +8,6 @@ import { v4 as uuidv4 } from "uuid";
 const BoardListUI = (props: IBoardListUIProps) => {
   return (
     <S.Wrapper>
-      <S.BestBoardWrapper>
-        가나다라마바사 베스트 게시물 자리자리
-      </S.BestBoardWrapper>
       <S.SearchWrapper>
         <S.SearchBox>
           <S.SearchImg src="/boards/list/search.png" />

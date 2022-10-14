@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import BoardListPage from "../boards";
 
 const Container = styled.div`
   display: flex;
@@ -10,5 +11,9 @@ const Container = styled.div`
 `;
 
 export default function HomePage() {
-  return <Container>ㅁㄴㅇㅇ</Container>;
+  return (
+    <Container>
+      <BoardListPage />
+    </Container>
+  );
 }

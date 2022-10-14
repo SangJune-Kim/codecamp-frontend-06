@@ -1,5 +1,5 @@
-import Resume from "../src/components/units/resume";
+import MarketListPage from "./markets";
 
 export default function Home() {
-  return <Resume />;
+  return <MarketListPage />;
 }

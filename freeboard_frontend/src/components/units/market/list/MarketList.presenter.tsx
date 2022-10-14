@@ -7,7 +7,6 @@ export default function MarketListUI(props) {
   return (
     <S.Wrapper>
       <S.MarketListWrapper>
-        <S.BestListWrapper>베스트 상품 자리자리</S.BestListWrapper>
         <S.ListMenuWrapper>
           <S.ChoiceShow>
             <S.ShowSelling>판매중 상품</S.ShowSelling>
