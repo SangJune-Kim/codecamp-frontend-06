@@ -115,3 +115,13 @@ export const RegisterButton = styled.button`
   color: white;
   cursor: pointer;
 `;
+
+export const LoginButton = styled.button`
+  border: 1px solid white;
+  background-color: black;
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+`;

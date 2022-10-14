@@ -39,7 +39,7 @@ export default function RegisterUI(props) {
               {props.formState.errors.password?.message}
             </S.ProfileError>
           </S.PasswordBox>
-          <S.PhoneCheckBox>
+          {/* <S.PhoneCheckBox>
             <S.InputTitle> 휴대폰 번호 입력</S.InputTitle>
             <S.ProfileInput
               type="text"
@@ -49,7 +49,7 @@ export default function RegisterUI(props) {
           <S.PhoneCheckValidation>
             <S.PhoneCheckButton>인증번호 전송</S.PhoneCheckButton>
             <S.PhoneCheckInput type="text" />
-          </S.PhoneCheckValidation>
+          </S.PhoneCheckValidation> */}
           <S.RegisterButton
             type="submit"
             // onClick={props.onClickRegister}
@@ -59,7 +59,9 @@ export default function RegisterUI(props) {
           </S.RegisterButton>
         </S.NecessaryWrapper>
       </form>
-      <div onClick={props.onClickMoveLogin}>로그인</div>
+      <S.LoginButton onClick={props.onClickMoveLogin}>
+        로그인 페이지로
+      </S.LoginButton>
     </S.Wrapper>
   );
 }

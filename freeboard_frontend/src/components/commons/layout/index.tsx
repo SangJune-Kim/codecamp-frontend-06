@@ -16,14 +16,14 @@ interface ILayoutProps {
 
 const HIDDEN_HEADER = [""];
 const HIDDEN_BANNER = [
-  "/",
-  "/home",
+  // "/",
+  // "/home",
   "/login",
   "/register",
-  "/markets",
+  // "/markets",
   "/markets/new",
   "/markets/[useditemId]",
-  "/boards",
+  // "/boards",
   "/firebaseBoards",
 ];
 const HIDDEN_NAVIGATION = ["/login", "/register"];

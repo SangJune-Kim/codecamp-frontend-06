@@ -18,7 +18,6 @@ export default function MarketDetailUI(props) {
             </S.CreatedAt>
           </S.Profile>
         </S.ProfileBox>
-        <div>공유,위치 아이콘</div>
       </S.HeaderWrapper>
       <S.BodyWrapper>
         <S.ProductProfileWrapper>
